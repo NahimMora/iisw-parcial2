@@ -29,9 +29,9 @@
 
 | Cap. | Estado | Video | Notas |
 |---|---|---|---|
-| 1 Requerimientos y casos de uso | en producción | renderizando | |
-| 2 Descripción de CU | pendiente | — | |
-| 3 Diagrama de secuencia | pendiente | — | |
+| 1 Requerimientos y casos de uso | publicado | ch1-casos-de-uso.mp4 (5:57) | |
+| 2 Descripción de CU | publicado | ch2-descripcion-cu.mp4 (4:23) | |
+| 3 Diagrama de secuencia | contenido escrito, video pendiente | — | |
 | 4 Prototipos e HU | pendiente | — | |
 | 5 Pruebas | pendiente | — | |
 | 6 Tipos de sistemas | pendiente | — | |

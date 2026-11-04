@@ -1,0 +1,142 @@
+{
+ "fps": 30,
+ "total": 7899,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-4ee3aeeff7.mp3",
+   "start": 18,
+   "dur": 391,
+   "audio": 377,
+   "text": "El diagrama de casos de uso dice qué objetivos tiene cada actor. Pero no cuenta cómo se logra cada uno. Para eso está la descripción del caso de uso: tomamos una elipse y la abrimos, paso a paso."
+  },
+  {
+   "id": "b02",
+   "file": "b02-cd4ecebd0b.mp3",
+   "start": 409,
+   "dur": 403,
+   "audio": 390,
+   "text": "Es la tercera herramienta de la práctica, y necesita su propio sesenta por ciento. Además, la profesora Blanco lo explicó así: piden la descripción para poder comprobar que tu diagrama de secuencia se corresponde con ella."
+  },
+  {
+   "id": "b03",
+   "file": "b03-c71f3d7e97.mp3",
+   "start": 812,
+   "dur": 351,
+   "audio": 338,
+   "text": "Vamos con el caso de uso dos de Kameral, solicitar libro. El cuadro empieza con el identificador y el nombre, y el nombre tiene que ser exactamente el mismo que figura en la elipse del diagrama."
+  },
+  {
+   "id": "b04",
+   "file": "b04-0bd09daee2.mp3",
+   "start": 1163,
+   "dur": 532,
+   "audio": 518,
+   "text": "Después, los actores. Al lado de cada uno se marca entre paréntesis una P si es primario, el que inicia, o una S si es secundario. Acá hay uno solo: socio, primario. Y el objetivo, en una línea: retirar un libro por parte de un socio."
+  },
+  {
+   "id": "b05",
+   "file": "b05-00460572af.mp3",
+   "start": 1695,
+   "dur": 356,
+   "audio": 342,
+   "text": "La precondición es lo que tiene que ser cierto antes de empezar: que exista el libro a retirar. La postcondición es cómo queda todo si el caso termina bien: el retiro del libro registrado."
+  },
+  {
+   "id": "b06",
+   "file": "b06-2eeafee821.mp3",
+   "start": 2050,
+   "dur": 355,
+   "audio": 341,
+   "text": "Ahora, el curso normal. Es el camino en el que todos los controles salen bien. Se escribe en pasos numerados y cortos, y alterna lo que hace el actor con lo que hace el sistema."
+  },
+  {
+   "id": "b07",
+   "file": "b07-983058d632.mp3",
+   "start": 2405,
+   "dur": 572,
+   "audio": 559,
+   "text": "Paso uno: el socio solicita el retiro de un libro. Paso dos: se valida al socio. Y debajo, la regla que explica qué se valida. Erre uno: que no tenga un retiro registrado sin devolución. Esa regla sale directamente de la narrativa: un solo libro por vez."
+  },
+  {
+   "id": "b08",
+   "file": "b08-c4f4d57d85.mp3",
+   "start": 2977,
+   "dur": 487,
+   "audio": 474,
+   "text": "Paso tres: se registra el retiro. Paso cuatro: se entrega el libro al socio. Ojo con la aclaración de Blanco: no se entrega nada físico; el sistema entrega la información. Y el flujo termina con efe ce u, fin de caso de uso."
+  },
+  {
+   "id": "b09",
+   "file": "b09-433bfd89dc.mp3",
+   "start": 3465,
+   "dur": 505,
+   "audio": 492,
+   "text": "Después buscamos en qué paso algo puede salir mal. La validación está en el paso dos, entonces la alternativa se numera desde ahí: dos punto uno, el socio tiene un retiro sin devolver; dos punto dos, se rechaza el pedido; dos punto tres, fin de caso de uso."
+  },
+  {
+   "id": "b10",
+   "file": "b10-fab65a77e4.mp3",
+   "start": 3970,
+   "dur": 363,
+   "audio": 350,
+   "text": "Una alternativa no siempre aborta. En devolver libro, si el préstamo estaba vencido, el sistema inhabilita al socio por un mes y continúa en el paso siguiente, registrando la devolución."
+  },
+  {
+   "id": "b11",
+   "file": "b11-e454c564b5.mp3",
+   "start": 4333,
+   "dur": 373,
+   "audio": 359,
+   "text": "¿Cómo encontrar las alternativas? Buscá en el enunciado expresiones como: si, en caso de, en caso contrario. Cada una suele ser una alternativa del paso donde se hace ese control."
+  },
+  {
+   "id": "b12",
+   "file": "b12-38720aac5d.mp3",
+   "start": 4706,
+   "dur": 695,
+   "audio": 682,
+   "text": "Así resolvió la profesora el servicio técnico. Solicitar reparación: cliente primario y servicio técnico secundario. El cliente solicita; el sistema valida el aparato, con la regla de que exista en su abono; registra la recepción, entrega el comprobante y avisa al servicio técnico. Si los datos son incorrectos: dos punto uno, informa el problema, y fin."
+  },
+  {
+   "id": "b13",
+   "file": "b13-ed5b326c5b.mp3",
+   "start": 5401,
+   "dur": 412,
+   "audio": 398,
+   "text": "Un tema de teoría: las relaciones entre casos de uso. Taboada fue claro: en la práctica no se exigen ni include ni extend. Pero en la parte teórica pueden preguntarlas, así que hay que distinguirlas."
+  },
+  {
+   "id": "b14",
+   "file": "b14-7404ba4779.mp3",
+   "start": 5813,
+   "dur": 471,
+   "audio": 458,
+   "text": "Extend, o extensión: un caso de uso extiende a otro cuando tiene una parte de la funcionalidad que no siempre ocurre. El ejemplo de Jacobson: cenar puede extenderse con tomar café. No es un error ni una excepción; simplemente puede darse o no."
+  },
+  {
+   "id": "b15",
+   "file": "b15-2dc99b2779.mp3",
+   "start": 6285,
+   "dur": 509,
+   "audio": 495,
+   "text": "Include, o relación de uso: un caso de uso queda incluido en otro porque es un escenario común a varios. Registrar préstamo y registrar devolución usan, los dos, consultar socio. En ambas relaciones, el caso relacionado tiene que ser un caso de uso en sí mismo."
+  },
+  {
+   "id": "b16",
+   "file": "b16-bea0f8a5b3.mp3",
+   "start": 6793,
+   "dur": 502,
+   "audio": 488,
+   "text": "Ahora, un cuadro que pierde puntos. Actor bibliotecario, que es interno. Pasos que hablan de pantallas y botones. Alternativa con letras, sin decir en qué paso ocurre. Y no hay regla de validación ni fin de caso de uso."
+  },
+  {
+   "id": "b17",
+   "file": "b17-08c40460a0.mp3",
+   "start": 7295,
+   "dur": 559,
+   "audio": 546,
+   "text": "Para cerrar, controlá: nombre igual al diagrama, actores con P y S, objetivo, pre y postcondición, pasos que alternan actor y sistema, reglas erre, alternativas numeradas desde su paso, y efe ce u. Este orden es el que vas a dibujar, flecha por flecha, en el diagrama de secuencia."
+  }
+ ]
+}
