@@ -1,0 +1,118 @@
+{
+ "fps": 30,
+ "total": 6779,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-58b9c42e2b.mp3",
+   "start": 18,
+   "dur": 407,
+   "audio": 393,
+   "text": "Ya sabemos especificar requerimientos. Ahora, ¿cómo comprobamos que el sistema los cumple? Veamos trazabilidad, prueba de aceptación, verificación y validación, estrategias de prueba y testing ágil."
+  },
+  {
+   "id": "b02",
+   "file": "b02-2d061997d8.mp3",
+   "start": 425,
+   "dur": 570,
+   "audio": 557,
+   "text": "La trazabilidad parte del documento de especificación, el SRS, y permite saber de dónde salió cada requerimiento. La trazabilidad remota mira hacia atrás, al origen o fuente del requerimiento. La futura mira hacia las fases posteriores, y para eso cada requerimiento necesita un nombre o referencia única."
+  },
+  {
+   "id": "b03",
+   "file": "b03-79d4e9ae58.mp3",
+   "start": 995,
+   "dur": 713,
+   "audio": 699,
+   "text": "Hay cuatro direcciones. Hacia atrás desde los requerimientos: sabemos por qué existe cada requerimiento del SRS. Hacia adelante hasta los requerimientos: los documentos previos pueden referenciarse al SRS. Hacia atrás hasta los requerimientos: cada comportamiento del software refiere los requerimientos que satisface. Y hacia adelante desde los requerimientos: sabemos qué componentes satisfacen cada uno."
+  },
+  {
+   "id": "b04",
+   "file": "b04-529858598d.mp3",
+   "start": 1707,
+   "dur": 308,
+   "audio": 294,
+   "text": "Cuando el software ya está en operación, la trazabilidad remota se vuelve más importante: al modificar el diseño o el código hay que identificar los requerimientos afectados."
+  },
+  {
+   "id": "b05",
+   "file": "b05-8f8ddebf06.mp3",
+   "start": 2015,
+   "dur": 585,
+   "audio": 572,
+   "text": "La prueba de aceptación la realizan los usuarios, para verificar que el sistema se ajusta a sus requerimientos. Es una técnica de caja negra, basada en la especificación. Tiene cinco pasos: determinar el rol del usuario, definir los criterios de aceptación, desarrollar un plan, ejecutarlo y tomar las decisiones de aceptación."
+  },
+  {
+   "id": "b06",
+   "file": "b06-c6c636f453.mp3",
+   "start": 2600,
+   "dur": 588,
+   "audio": 575,
+   "text": "Se hace con datos reales del cliente, no ficticios, y esa diferencia puede disparar errores del sistema o revelar errores en los requerimientos. Según el ISTQB, son pruebas formales respecto de las necesidades del usuario, para que este decida si acepta o no el sistema. Son pruebas de validación, no de búsqueda de defectos."
+  },
+  {
+   "id": "b07",
+   "file": "b07-5bd4a07274.mp3",
+   "start": 3189,
+   "dur": 412,
+   "audio": 398,
+   "text": "Ahora una pregunta clásica: la diferencia entre verificación y validación, según Boehm. Validación: ¿estamos construyendo el producto correcto? Verificación: ¿estamos construyendo el producto correctamente?"
+  },
+  {
+   "id": "b08",
+   "file": "b08-07cfade837.mp3",
+   "start": 3600,
+   "dur": 492,
+   "audio": 478,
+   "text": "La validación demuestra que lo especificado corresponde a lo que el cliente realmente necesita; por eso el cliente tiene que validar el SRS. La verificación comprueba que el software está de acuerdo con esa especificación. Y esta revisión, V y V, se hace en todas las etapas."
+  },
+  {
+   "id": "b09",
+   "file": "b09-9c643b9a77.mp3",
+   "start": 4092,
+   "dur": 552,
+   "audio": 539,
+   "text": "La estrategia de prueba define el enfoque y los objetivos de las pruebas: qué fases seguir y qué tipos de prueba hacer en cada una. Las fases son: unidad, que prueba un módulo y suele hacerla quien lo construyó; integración, que revisa grupos de módulos interconectados; y sistema, en un ambiente similar al real."
+  },
+  {
+   "id": "b10",
+   "file": "b10-fa694e5869.mp3",
+   "start": 4644,
+   "dur": 499,
+   "audio": 486,
+   "text": "Y los tipos de prueba que pueden ejecutarse: de recuperación, de seguridad, de resistencia o stress, de rendimiento, de aceptación y de regresión. La estrategia también define técnicas, herramientas y criterios de finalización, siempre basados en los requerimientos."
+  },
+  {
+   "id": "b11",
+   "file": "b11-f9206f8061.mp3",
+   "start": 5143,
+   "dur": 524,
+   "audio": 510,
+   "text": "Por último, el testing ágil. Usa prácticas como la programación extrema, y enfatiza el diseño de pruebas primero: el equipo diseña las pruebas mientras analiza. En un equipo ágil todos tienen habilidades de probador, así que desaparece la fase de pruebas separada de los métodos tradicionales."
+  },
+  {
+   "id": "b12",
+   "file": "b12-e22f0caac0.mp3",
+   "start": 5667,
+   "dur": 283,
+   "audio": 269,
+   "text": "Los roles son el tester, el interesado y el equipo ágil. Y el factor de éxito es automatizar las pruebas de regresión, y también las de aceptación."
+  },
+  {
+   "id": "b13",
+   "file": "b13-543fbce24a.mp3",
+   "start": 5950,
+   "dur": 309,
+   "audio": 295,
+   "text": "Una rápida: probar que el sistema cumple lo que el usuario realmente necesita, ¿es verificación o validación? Es validación: el producto correcto."
+  },
+  {
+   "id": "b14",
+   "file": "b14-160b22c50a.mp3",
+   "start": 6259,
+   "dur": 475,
+   "audio": 462,
+   "text": "Para recordar: trazabilidad remota y futura, cuatro direcciones; aceptación con cinco pasos y datos reales; validación es el producto correcto, verificación es el producto correctamente; unidad, integración y sistema; y en ágil, todos prueban y se automatiza."
+  }
+ ]
+}

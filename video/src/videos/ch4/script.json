@@ -1,0 +1,345 @@
+{
+ "voice": "es-AR-TomasNeural",
+ "rate": "+5%",
+ "beats": [
+  {
+   "id": "b01",
+   "text": "Este capítulo es de teoría: prototipos, mockups e historias de usuario. Son técnicas para entender qué necesita el usuario antes de construir.",
+   "scene": {
+    "type": "title",
+    "title": "Prototipos e historias de usuario",
+    "sub": "Capítulo 4 · teoría"
+   }
+  },
+  {
+   "id": "b02",
+   "text": "Empecemos por el problema. Muchos errores de un sistema nacen de una mala comunicación entre el usuario y el analista. Los requisitos quedan incompletos, ambiguos o inconsistentes. Y como se descubren tarde, son de los más caros de corregir.",
+   "scene": {
+    "type": "flow",
+    "heading": "¿Por qué prototipar?",
+    "items": [
+     {
+      "t": "Mala comunicación",
+      "d": "usuario ↔ analista",
+      "at": 0.12
+     },
+     {
+      "t": "Requisitos defectuosos",
+      "d": "incompletos · ambiguos · inconsistentes",
+      "at": 0.35
+     },
+     {
+      "t": "Se detectan tarde",
+      "d": "el costo se multiplica",
+      "c": "#ff5d5d",
+      "at": 0.7
+     }
+    ]
+   }
+  },
+  {
+   "id": "b03",
+   "text": "Un prototipo es un modelo o maqueta de las interfaces entre el sistema y el usuario. Simula entradas, salidas y la interactividad, buscando parecerse lo más posible al sistema final. Conviene sobre todo cuando los requerimientos cambian rápido, cuando el cliente no entrega una lista completa, o cuando nadie conoce bien el área de aplicación.",
+   "scene": {
+    "type": "tree",
+    "heading": "Prototipo: cuándo conviene",
+    "root": "Prototipo",
+    "items": [
+     {
+      "t": "Requerimientos cambiantes",
+      "at": 0.6
+     },
+     {
+      "t": "Cliente poco abierto",
+      "d": "no da una lista completa",
+      "at": 0.72
+     },
+     {
+      "t": "Dominio desconocido",
+      "d": "ni el cliente ni nosotros",
+      "at": 0.85
+     }
+    ],
+    "note": {
+     "t": "simula entradas, salidas e interactividad",
+     "at": 0.3,
+     "c": "#6ea8ff"
+    }
+   }
+  },
+  {
+   "id": "b04",
+   "text": "Su principal desventaja: es imposible saber desde el comienzo cuánto tiempo llevará llegar a un producto aceptable, porque no sabemos cuántas iteraciones de ida y vuelta harán falta. Aun así, un estudio de Gordon y Bieman sobre treinta y nueve proyectos encontró beneficios: mejor usabilidad, más coherencia con las necesidades, mejor diseño, mejor mantenimiento y menos esfuerzo de desarrollo.",
+   "scene": {
+    "type": "compare",
+    "heading": "Desventaja y beneficios",
+    "left": "Desventaja",
+    "right": "Beneficios (Gordon y Bieman, 1995)",
+    "rows": [
+     {
+      "k": "Tiempo",
+      "l": "No se sabe cuántas iteraciones harán falta",
+      "r": "Menos esfuerzo de desarrollo",
+      "at": 0.1
+     },
+     {
+      "k": "Usuario",
+      "l": "—",
+      "r": "Mejor usabilidad · más coherencia con sus necesidades",
+      "at": 0.55
+     },
+     {
+      "k": "Producto",
+      "l": "—",
+      "r": "Mejor diseño · mejor mantenimiento",
+      "at": 0.75
+     }
+    ]
+   }
+  },
+  {
+   "id": "b05",
+   "text": "Algunas pautas para desarrollarlo: saber a qué usuarios va dirigido, usar términos familiares para ellos, mantener coherencia, agrupar funciones de forma lógica, mostrar el estado de ejecución, dificultar acciones destructivas y generar diálogos eficientes.",
+   "scene": {
+    "type": "cards",
+    "heading": "Pautas para el prototipo",
+    "cols": 4,
+    "items": [
+     {
+      "t": "Usuarios",
+      "d": "a quién va dirigido"
+     },
+     {
+      "t": "Lenguaje",
+      "d": "términos familiares"
+     },
+     {
+      "t": "Coherencia",
+      "d": "interna y con otros sistemas"
+     },
+     {
+      "t": "Agrupar",
+      "d": "funciones en forma lógica"
+     },
+     {
+      "t": "Estado",
+      "d": "mostrar el avance de la ejecución"
+     },
+     {
+      "t": "Proteger",
+      "d": "obstaculizar acciones destructivas"
+     },
+     {
+      "t": "Diálogos",
+      "d": "eficientes"
+     }
+    ]
+   }
+  },
+  {
+   "id": "b06",
+   "text": "¿Y el mockup? Es una representación visual, pero estática, de un diseño. Muestra cómo se estructura la información y qué funciones habrá, por ejemplo un video representado con una imagen y un ícono de reproducción. No es interactivo, pero sirve para que el equipo visualice el diseño y para pedir feedback al cliente.",
+   "scene": {
+    "type": "compare",
+    "heading": "Prototipo vs. mockup",
+    "left": "Prototipo",
+    "right": "Mockup",
+    "rows": [
+     {
+      "k": "Naturaleza",
+      "l": "Simula la interactividad",
+      "r": "Representación visual estática",
+      "at": 0.15
+     },
+     {
+      "k": "Muestra",
+      "l": "Entradas, salidas, comportamiento",
+      "r": "Estructura de la información y funciones básicas",
+      "at": 0.35
+     },
+     {
+      "k": "Ejemplo",
+      "l": "Pantallas que responden",
+      "r": "Un video = imagen + ícono de play",
+      "at": 0.5
+     },
+     {
+      "k": "Sirve para",
+      "l": "Acordar requerimientos con el usuario",
+      "r": "Visualizar el diseño y pedir feedback",
+      "at": 0.8
+     }
+    ],
+    "same": {
+     "t": "Ambos forman parte del diseño centrado en el usuario",
+     "at": 0.95
+    }
+   }
+  },
+  {
+   "id": "b07",
+   "text": "Pasemos a las historias de usuario. Una historia describe una funcionalidad desde el punto de vista del usuario, en uno o dos renglones, sobre una tarjeta. Responde tres preguntas: quién es el beneficiario, qué quiere hacer, y cuál es el beneficio.",
+   "scene": {
+    "type": "flow",
+    "heading": "Historia de usuario: tres preguntas",
+    "items": [
+     {
+      "t": "¿Quién?",
+      "d": "el beneficiario (rol)",
+      "c": "#ff8fab",
+      "at": 0.55
+     },
+     {
+      "t": "¿Qué?",
+      "d": "la funcionalidad deseada",
+      "c": "#6ea8ff",
+      "at": 0.7
+     },
+     {
+      "t": "¿Para qué?",
+      "d": "el valor de negocio",
+      "c": "#53d88a",
+      "at": 0.85
+     }
+    ]
+   }
+  },
+  {
+   "id": "b08",
+   "text": "El formato es: como rol, yo quiero algo, para obtener un beneficio. Por ejemplo: como bibliotecario de la institución, quiero revisar el historial de préstamos, para identificar los libros más pedidos y reponerlos.",
+   "scene": {
+    "type": "cards",
+    "heading": "Como… quiero… para…",
+    "cols": 1,
+    "items": [
+     {
+      "t": "Como bibliotecario de la institución",
+      "c": "#ff8fab",
+      "at": 0.45
+     },
+     {
+      "t": "quiero revisar el historial de préstamos",
+      "c": "#6ea8ff",
+      "at": 0.62
+     },
+     {
+      "t": "para identificar los libros con mayor demanda y reponerlos",
+      "c": "#53d88a",
+      "at": 0.8
+     }
+    ]
+   }
+  },
+  {
+   "id": "b09",
+   "text": "Las historias se relacionan con los casos de uso. En los casos de uso dos punto cero, Ivar Jacobson propone narrativas más livianas: las historias ayudan a entender el caso de uso y a implementarlo porción por porción. Y cuando una historia es tan grande que no entra en una iteración, se llama épica, y hay que dividirla en historias menores.",
+   "scene": {
+    "type": "tree",
+    "heading": "Casos de uso 2.0 y épicas",
+    "root": "Caso de uso",
+    "items": [
+     {
+      "t": "Historia 1",
+      "d": "una porción implementable",
+      "at": 0.35
+     },
+     {
+      "t": "Historia 2",
+      "at": 0.42
+     },
+     {
+      "t": "Épica",
+      "d": "demasiado grande → se divide",
+      "c": "#ff5d5d",
+      "at": 0.78
+     }
+    ]
+   }
+  },
+  {
+   "id": "b10",
+   "text": "¿Cómo es una buena historia? El criterio INVEST, de Bill Wake, dos mil tres. Independiente: no depende de otras. Negociable: puede cambiar hasta entrar en una iteración. Valorable: entrega valor al usuario. Estimable: se puede estimar su esfuerzo. Pequeña: se puede planificar. Y comprobable: da la información necesaria para probarla.",
+   "scene": {
+    "type": "letters",
+    "heading": "INVEST (Bill Wake, 2003)",
+    "items": [
+     {
+      "t": "Independiente",
+      "d": "no depende de otra",
+      "at": 0.22
+     },
+     {
+      "t": "Negociable",
+      "d": "cambia hasta la iteración",
+      "at": 0.32
+     },
+     {
+      "t": "Valorable",
+      "d": "aporta valor",
+      "at": 0.45
+     },
+     {
+      "t": "Estimable",
+      "d": "su esfuerzo",
+      "at": 0.55
+     },
+     {
+      "t": "Pequeña",
+      "d": "Small · planificable",
+      "at": 0.67,
+      "l": "S"
+     },
+     {
+      "t": "Comprobable",
+      "d": "Testable",
+      "at": 0.77,
+      "l": "T"
+     }
+    ]
+   }
+  },
+  {
+   "id": "b11",
+   "text": "Probemos. ¿Qué letra de INVEST falla en esta historia? Como cliente, quiero que el sistema sea rápido. No dice cómo comprobarlo ni cuánto es rápido: no es comprobable.",
+   "scene": {
+    "type": "quiz",
+    "heading": "¿Qué falla?",
+    "q": "\"Como cliente, quiero que el sistema sea rápido.\"",
+    "options": [
+     "Independiente",
+     "Negociable",
+     "Comprobable (testeable)",
+     "Pequeña"
+    ],
+    "answer": 2,
+    "at": 0.6,
+    "why": "No hay criterio para probarlo: no es comprobable."
+   }
+  },
+  {
+   "id": "b12",
+   "text": "Para cerrar: prototipo simula, mockup muestra en forma estática; la historia de usuario responde quién, qué y para qué; las épicas se dividen; y una buena historia cumple INVEST.",
+   "scene": {
+    "type": "check",
+    "heading": "Para recordar",
+    "items": [
+     {
+      "t": "Prototipo: simula la interacción · desventaja: tiempo incierto"
+     },
+     {
+      "t": "Mockup: visual y estático"
+     },
+     {
+      "t": "Historia: Como (rol) quiero (algo) para (beneficio)"
+     },
+     {
+      "t": "Épica: demasiado grande → dividir"
+     },
+     {
+      "t": "INVEST: Independiente, Negociable, Valorable, Estimable, Pequeña, Testeable"
+     }
+    ]
+   }
+  }
+ ]
+}

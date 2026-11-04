@@ -1,0 +1,94 @@
+{
+ "fps": 30,
+ "total": 5423,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-1d1262ae04.mp3",
+   "start": 18,
+   "dur": 473,
+   "audio": 459,
+   "text": "Una vez desarrollado, un sistema inevitablemente se modifica para adaptarse a un entorno que cambia y seguir siendo útil. La organización depende de él, así que tiene que seguir invirtiendo. El problema: cada adaptación degrada su estructura poco a poco."
+  },
+  {
+   "id": "b02",
+   "file": "b02-475da392cc.mp3",
+   "start": 491,
+   "dur": 623,
+   "audio": 609,
+   "text": "El mantenimiento es cambiar algo del sistema después de entregarlo al cliente: desde corregir una línea de código hasta corregir errores de diseño o agregar requerimientos nuevos. Es caro, porque agregar funcionalidad con el sistema funcionando cuesta mucho más que hacerlo durante el desarrollo. Y todo cambio introduce, inevitablemente, nuevos defectos."
+  },
+  {
+   "id": "b03",
+   "file": "b03-f30e705fbc.mp3",
+   "start": 1113,
+   "dur": 575,
+   "audio": 562,
+   "text": "La reingeniería es un proceso para mejorar un software existente. Según Sommerville, puede implicar redocumentar el sistema, organizarlo y reestructurarlo, traducirlo a un lenguaje más moderno, y modificar la estructura y los valores de sus datos. Y en general, sin cambiar su funcionalidad ni su arquitectura."
+  },
+  {
+   "id": "b04",
+   "file": "b04-6b30584cd7.mp3",
+   "start": 1689,
+   "dur": 470,
+   "audio": 456,
+   "text": "¿Por qué hacer reingeniería en vez de un sistema nuevo? Por dos razones: menor riesgo, porque desarrollar desde cero un sistema crítico puede demorarse y dañar seriamente a la empresa; y menor costo, porque siempre será más barato que construir uno completamente nuevo."
+  },
+  {
+   "id": "b05",
+   "file": "b05-d066bd8206.mp3",
+   "start": 2159,
+   "dur": 364,
+   "audio": 351,
+   "text": "Pasemos a los métodos formales: técnicas con bases matemáticas para describir las propiedades de un sistema, que dan un marco para especificar, desarrollar y verificar sistemas de manera rigurosa, no improvisada."
+  },
+  {
+   "id": "b06",
+   "file": "b06-7da1b4b9d8.mp3",
+   "start": 2523,
+   "dur": 703,
+   "audio": 689,
+   "text": "Aunque desde los ochenta se los propuso como el camino para mejorar la calidad, no se incorporaron a todos los desarrollos. Tres razones: otras técnicas lograron avances, como nuevas metodologías, los lenguajes orientados a objetos o la gestión de configuraciones; el mercado prioriza la interfaz de usuario y el desarrollo rápido, y las especificaciones formales no sirven para ninguna de las dos; y no son escalables."
+  },
+  {
+   "id": "b07",
+   "file": "b07-d12923af61.mp3",
+   "start": 3225,
+   "dur": 440,
+   "audio": 427,
+   "text": "Hay dos aproximaciones. La algebraica describe el sistema mediante operaciones y sus relaciones. La basada en modelos construye un modelo con conjuntos y sucesiones, e indica cómo cada operación modifica el estado del sistema."
+  },
+  {
+   "id": "b08",
+   "file": "b08-81e1e4dc73.mp3",
+   "start": 3666,
+   "dur": 564,
+   "audio": 550,
+   "text": "¿Cuándo usar cada una? La algebraica sirve para especificar interfaces, como conjuntos de clases o tipos abstractos, porque oculta el estado y se basa en las relaciones entre operaciones. La basada en modelos muestra el estado y simplifica especificar el comportamiento, con precondiciones y postcondiciones."
+  },
+  {
+   "id": "b09",
+   "file": "b09-35f70be4b6.mp3",
+   "start": 4229,
+   "dur": 422,
+   "audio": 408,
+   "text": "Los lenguajes: algebraicos secuenciales, Larch y OBJ; algebraicos concurrentes, Lotos. Basados en modelos secuenciales: Z, VDM y B; y concurrentes: CSP y redes de Petri."
+  },
+  {
+   "id": "b10",
+   "file": "b10-098dea1f2e.mp3",
+   "start": 4651,
+   "dur": 469,
+   "audio": 456,
+   "text": "Puntos clave: las especificaciones formales complementan a las informales, porque son precisas y no ambiguas; obligan a analizar los requerimientos al principio, cuando corregir es más barato; y son excelentes para sistemas críticos, donde importan la seguridad y la confiabilidad."
+  },
+  {
+   "id": "b11",
+   "file": "b11-8a6bf10bbc.mp3",
+   "start": 5120,
+   "dur": 258,
+   "audio": 244,
+   "text": "Una última: el lenguaje Z, ¿a qué aproximación pertenece? Basada en modelos, para sistemas secuenciales."
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+  "voice": "es-AR-TomasNeural",
+  "rate": "+5%",
+  "beats": [
+    { "id": "b01", "text": "Un sistema es un conjunto de elementos que se relacionan para alcanzar un fin. Y un sistema de información, según Schach, logra un resultado empresarial: recopila, manipula, almacena y genera reportes sobre las actividades del negocio, para ayudar a la administración.",
+      "scene": { "type": "flow", "heading": "Sistema y sistema de información", "items": [
+        { "t": "Sistema", "d": "elementos relacionados para alcanzar un fin", "at": 0.05 },
+        { "t": "Sistema de información", "d": "recopila · manipula · almacena · reporta", "at": 0.45 },
+        { "t": "Resultado empresarial", "d": "ayuda a administrar el negocio (Schach)", "c": "#53d88a", "at": 0.8 } ] } },
+    { "id": "b02", "text": "Hay muchas clasificaciones, pero la materia se enfoca en tres: sistemas de tiempo real, sistemas distribuidos y sistemas embebidos.",
+      "scene": { "type": "tree", "heading": "Tres tipos de sistemas", "root": "Tipos de sistemas", "items": [
+        { "t": "Tiempo real", "c": "#ffb35c", "at": 0.45 }, { "t": "Distribuidos", "c": "#6ea8ff", "at": 0.62 }, { "t": "Embebidos", "c": "#6fd69a", "at": 0.8 } ] } },
+    { "id": "b03", "text": "Un sistema de tiempo real tiene que interactuar rápido con su entorno y responder en el tiempo especificado. El intervalo entre entrada y salida suele ser muy pequeño. Su eficiencia no depende solo de que el resultado sea correcto, sino también del momento en que lo entrega. Por eso su característica principal es la predictibilidad.",
+      "scene": { "type": "cards", "heading": "Sistemas de tiempo real", "cols": 2, "items": [
+        { "t": "Responde en el tiempo dictado", "d": "intervalo entrada → salida muy pequeño", "c": "#ffb35c", "at": 0.1 },
+        { "t": "Correcto Y a tiempo", "d": "la exactitud y el momento de entrega", "c": "#ffb35c", "at": 0.5 },
+        { "t": "Predictibilidad", "d": "su característica principal", "c": "#ffd166", "at": 0.85 },
+        { "t": "Más complejo de lo que parece", "d": "cualquier cambio puede alterar los tiempos", "c": "#ff5d5d", "at": 1.1 } ] } },
+    { "id": "b04", "text": "Es más complejo de lo que parece: todas las interacciones entre componentes afectan el resultado temporal. Su diseño tiene tres fases: identificar tareas y restricciones temporales, codificar los programas, y medir el tiempo de cómputo de cada tarea para analizar la planificación.",
+      "scene": { "type": "flow", "heading": "Diseño de un sistema de tiempo real", "items": [
+        { "t": "1 · Identificar", "d": "tareas y restricciones temporales", "c": "#ffb35c", "at": 0.45 },
+        { "t": "2 · Codificar", "d": "los programas de cada tarea", "c": "#ffb35c", "at": 0.65 },
+        { "t": "3 · Medir y planificar", "d": "tiempo de cómputo de cada tarea", "c": "#ffb35c", "at": 0.82 } ] } },
+    { "id": "b05", "text": "Sus componentes incluyen manejo de interrupciones, bases de datos y lenguajes de tiempo real, sincronización y comunicación de tareas, y sistemas operativos de tiempo real, donde lo importante no es el usuario sino los procesos. Ejemplos: VxWorks o Lynx OS. Se usan sobre todo para controlar entornos con sensores.",
+      "scene": { "type": "tree", "heading": "Elementos de un sistema de tiempo real", "root": "STR", "items": [
+        { "t": "Integración y rendimiento", "c": "#ffb35c", "at": 0.05 }, { "t": "Manejo de interrupciones", "c": "#ffb35c", "at": 0.1 }, { "t": "Bases de datos de TR", "c": "#ffb35c", "at": 0.16 },
+        { "t": "SO de tiempo real", "d": "importan los procesos, no el usuario", "c": "#ffd166", "at": 0.3 }, { "t": "Lenguajes de TR", "c": "#ffb35c", "at": 0.2 }, { "t": "Sincronización de tareas", "c": "#ffb35c", "at": 0.24 } ],
+        "note": { "t": "uso típico: control de entornos con sensores", "at": 0.85 } } },
+    { "id": "b06", "text": "Un sistema distribuido, según Sommerville, es aquel en el que el procesamiento se distribuye sobre varias computadoras en vez de estar en una sola máquina. Y hoy, prácticamente todos los grandes sistemas son distribuidos. Las computadoras están separadas físicamente, cada una con su hardware y software, pero conectadas por una red, y se diseñan como un sistema único.",
+      "scene": { "type": "flow", "heading": "Sistemas distribuidos (Sommerville)", "items": [
+        { "t": "Computadora A", "d": "hardware + software propio", "c": "#6ea8ff", "at": 0.55 },
+        { "t": "Red de comunicaciones", "d": "un sistema único, múltiples destinatarios", "c": "#b39dff", "at": 0.7 },
+        { "t": "Computadora B", "d": "separada físicamente", "c": "#6ea8ff", "at": 0.6 } ],
+        "note": { "t": "hoy, casi todos los grandes sistemas son distribuidos", "at": 0.35, "c": "#53d88a" } } },
+    { "id": "b07", "text": "Sus ventajas: compartir hardware y software, como impresoras o discos; basarse en sistemas abiertos con protocolos estándar; ejecutar procesos concurrentes; ser escalables; y tener mayor tolerancia a fallos, porque si falla una computadora no cae toda la red, aunque el servicio se degrade un poco. Como contrapartida, probarlos cuesta más tiempo y dinero que un sistema independiente.",
+      "scene": { "type": "cards", "heading": "Ventajas de los distribuidos", "cols": 3, "items": [
+        { "t": "Compartir recursos", "d": "impresoras, discos, software", "at": 0.08 }, { "t": "Sistemas abiertos", "d": "protocolos estándar, varios proveedores", "at": 0.2 },
+        { "t": "Concurrencia", "d": "procesos concurrentes", "at": 0.33 }, { "t": "Escalabilidad", "d": "según la red que los conecta", "at": 0.4 },
+        { "t": "Tolerancia a fallos", "d": "el fallo de una no tira el sistema", "c": "#53d88a", "at": 0.5 }, { "t": "Pruebas más costosas", "d": "más tiempo y costo que uno independiente", "c": "#ff5d5d", "at": 0.82 } ] } },
+    { "id": "b08", "text": "Los sistemas embebidos, o empotrados, tienen funciones que no están a la vista del usuario. Hacen una o pocas funciones, generalmente en tiempo real, y sus componentes están en una placa que puede no parecer una computadora: el reloj de un taxi o un microondas. Suelen programarse en ensamblador.",
+      "scene": { "type": "cards", "heading": "Sistemas embebidos", "cols": 2, "items": [
+        { "t": "Ocultos al usuario", "d": "las funciones no están a la vista", "c": "#6fd69a", "at": 0.1 },
+        { "t": "Una o pocas funciones", "d": "generalmente en tiempo real", "c": "#6fd69a", "at": 0.35 },
+        { "t": "En una placa", "d": "reloj de taxi, microondas", "c": "#6fd69a", "at": 0.6 },
+        { "t": "Ensamblador", "d": "sobre el microprocesador", "c": "#6fd69a", "at": 0.88 } ] } },
+    { "id": "b09", "text": "Características: se fabrican en forma masiva para bajar costos; usan procesadores y memorias pequeños; si falla un elemento hay que reparar o reemplazar toda la placa; y sus controladores pueden ser más lentos que los de una computadora personal.",
+      "scene": { "type": "check", "heading": "Características de los embebidos", "items": [
+        { "t": "Fabricación masiva → menor costo", "at": 0.12 }, { "t": "Procesador y memoria pequeños", "at": 0.3 }, { "t": "Un fallo → reparar o reemplazar la placa entera", "at": 0.5 }, { "t": "Controladores más lentos que una PC", "at": 0.78 } ] } },
+    { "id": "b10", "text": "Comparemos. El tiempo real se define por responder a tiempo y de forma predecible. El distribuido, por repartir el procesamiento en varias computadoras en red. El embebido, por estar oculto dentro de un dispositivo con pocas funciones. Y pueden combinarse: un embebido suele ser de tiempo real.",
+      "scene": { "type": "compare", "heading": "Cómo distinguirlos", "left": "Tiempo real · Distribuido", "right": "Embebido", "rows": [
+        { "k": "Define", "l": "TR: responder a tiempo, predecible · D: procesamiento en varias computadoras", "r": "Oculto dentro de un dispositivo, pocas funciones", "at": 0.15 },
+        { "k": "Ejemplo", "l": "TR: control con sensores · D: grandes sistemas actuales", "r": "Reloj de taxi, microondas", "at": 0.55 },
+        { "k": "Se combinan", "l": "—", "r": "Un embebido suele ser de tiempo real", "at": 0.85 } ] } },
+    { "id": "b11", "text": "Una pregunta como la de la autoevaluación: la correctitud del resultado y el tiempo en que se entrega, ¿para qué tipo de sistema son más críticos? Para los sistemas de tiempo real.",
+      "scene": { "type": "quiz", "heading": "Como en la autoevaluación", "q": "La correctitud del resultado y el tiempo de respuesta son más críticos para los…", "options": ["Sistemas de tiempo real", "Sistemas embebidos", "Sistemas distribuidos", "Sistemas de información"], "answer": 0, "at": 0.75, "why": "Su eficiencia depende de la exactitud y del momento de entrega." } }
+  ]
+}

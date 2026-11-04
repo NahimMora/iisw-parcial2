@@ -2,7 +2,7 @@
 
 > Archivo para retomar el trabajo tras una interrupción. Se actualiza en cada entrega.
 
-- **Fase actual:** producción progresiva de capítulos.
+- **Fase actual:** todos los capítulos producidos; verificación final y mejoras.
 - **URL desplegada:** https://nahimmora.github.io/iisw-parcial2/
 - **Repositorio:** https://github.com/NahimMora/iisw-parcial2
 
@@ -32,14 +32,18 @@
 | 1 Requerimientos y casos de uso | publicado | ch1-casos-de-uso.mp4 (5:57) | |
 | 2 Descripción de CU | publicado | ch2-descripcion-cu.mp4 (4:23) | |
 | 3 Diagrama de secuencia | publicado | ch3-secuencia.mp4 (6:02) | |
-| 4 Prototipos e HU | pendiente | — | |
-| 5 Pruebas | pendiente | — | |
-| 6 Tipos de sistemas | pendiente | — | |
-| 7 Reingeniería y formales | pendiente | — | |
+| 4 Prototipos e HU | publicado | ch4-prototipos-hu.mp4 (3:23) | |
+| 5 Pruebas | publicado | ch5-pruebas.mp4 (3:46) | re-render por layout de árbol |
+| 6 Tipos de sistemas | publicado | ch6-tipos-sistemas.mp4 | re-render por layout de árbol |
+| 7 Reingeniería y formales | publicado | ch7-reingenieria-formales.mp4 | |
 | Entrenador | publicado (5 niveles) | — | validadores con tests |
 | Simulacros | publicado | — | teórico 22 preg. + práctico con rúbrica |
 
 ## Problemas detectados / decisiones
+- Chromium de Playwright no trae H.264: las e2e usan Chrome y Edge instalados (canales `chrome` y `msedge`).
+- Barra superior fija tapaba controles en móvil: ahora es estática bajo 700 px.
+- Capítulos 4–7 usan el motor genérico `video/src/engine/Generic.tsx` (escenas declaradas en `script.json`).
+- Repo público creado con autorización explícita del usuario.
 - Figuras UML del PDF de teoría son imágenes: se reconstruyeron desde el texto y la clase grabada.
 - Narración: edge-tts (voz es-AR-TomasNeural), gratuito, sin clave.
 - Progreso solo local (GitHub Pages no sincroniza); exportar/importar JSON.

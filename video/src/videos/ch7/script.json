@@ -1,0 +1,46 @@
+{
+  "voice": "es-AR-TomasNeural",
+  "rate": "+5%",
+  "beats": [
+    { "id": "b01", "text": "Una vez desarrollado, un sistema inevitablemente se modifica para adaptarse a un entorno que cambia y seguir siendo útil. La organización depende de él, así que tiene que seguir invirtiendo. El problema: cada adaptación degrada su estructura poco a poco.",
+      "scene": { "type": "flow", "heading": "Evolución del software", "items": [
+        { "t": "Sistema en uso", "d": "la organización depende de él", "at": 0.05 },
+        { "t": "Entorno cambia", "d": "hay que adaptarlo", "at": 0.25 },
+        { "t": "Modificaciones", "d": "requieren inversión", "at": 0.55 },
+        { "t": "Degradación", "d": "la estructura se deteriora", "c": "#ff5d5d", "at": 0.82 } ] } },
+    { "id": "b02", "text": "El mantenimiento es cambiar algo del sistema después de entregarlo al cliente: desde corregir una línea de código hasta corregir errores de diseño o agregar requerimientos nuevos. Es caro, porque agregar funcionalidad con el sistema funcionando cuesta mucho más que hacerlo durante el desarrollo. Y todo cambio introduce, inevitablemente, nuevos defectos.",
+      "scene": { "type": "cards", "heading": "Mantenimiento", "cols": 3, "items": [
+        { "t": "Qué es", "d": "cambios posteriores a la entrega", "at": 0.05 },
+        { "t": "Alcance", "d": "de una línea de código a errores de diseño o nuevos requerimientos", "at": 0.3 },
+        { "t": "Costo alto", "d": "más caro que hacerlo en el desarrollo", "c": "#ff5d5d", "at": 0.6 },
+        { "t": "Nuevos defectos", "d": "todo cambio introduce errores", "c": "#ff5d5d", "at": 0.88 } ] } },
+    { "id": "b03", "text": "La reingeniería es un proceso para mejorar un software existente. Según Sommerville, puede implicar redocumentar el sistema, organizarlo y reestructurarlo, traducirlo a un lenguaje más moderno, y modificar la estructura y los valores de sus datos. Y en general, sin cambiar su funcionalidad ni su arquitectura.",
+      "scene": { "type": "tree", "heading": "Reingeniería (Sommerville)", "root": "Reingeniería", "items": [
+        { "t": "Redocumentar", "at": 0.35 }, { "t": "Reorganizar y reestructurar", "at": 0.45 }, { "t": "Traducir a un lenguaje moderno", "at": 0.58 }, { "t": "Actualizar estructura y datos", "at": 0.7 } ],
+        "note": { "t": "sin cambiar la funcionalidad ni la arquitectura", "at": 0.88, "c": "#53d88a" } } },
+    { "id": "b04", "text": "¿Por qué hacer reingeniería en vez de un sistema nuevo? Por dos razones: menor riesgo, porque desarrollar desde cero un sistema crítico puede demorarse y dañar seriamente a la empresa; y menor costo, porque siempre será más barato que construir uno completamente nuevo.",
+      "scene": { "type": "compare", "heading": "¿Reingeniería o sistema nuevo?", "left": "Reingeniería", "right": "Sistema desde cero", "rows": [
+        { "k": "Riesgo", "l": "Menor", "r": "Alto: un retraso en un sistema crítico causa daños severos", "at": 0.3 },
+        { "k": "Costo", "l": "Menor", "r": "Siempre mayor", "at": 0.75 } ] } },
+    { "id": "b05", "text": "Pasemos a los métodos formales: técnicas con bases matemáticas para describir las propiedades de un sistema, que dan un marco para especificar, desarrollar y verificar sistemas de manera rigurosa, no improvisada.",
+      "scene": { "type": "quote", "heading": "Métodos formales", "quote": "Técnicas con bases matemáticas para describir las propiedades del sistema; marcos para especificar, desarrollar y verificar sistemas, más que ad hoc.", "who": "The Encyclopedia of Software Engineering (paráfrasis)" } },
+    { "id": "b06", "text": "Aunque desde los ochenta se los propuso como el camino para mejorar la calidad, no se incorporaron a todos los desarrollos. Tres razones: otras técnicas lograron avances, como nuevas metodologías, los lenguajes orientados a objetos o la gestión de configuraciones; el mercado prioriza la interfaz de usuario y el desarrollo rápido, y las especificaciones formales no sirven para ninguna de las dos; y no son escalables.",
+      "scene": { "type": "cards", "heading": "¿Por qué no se usan en todo?", "cols": 3, "items": [
+        { "t": "Otras técnicas avanzaron", "d": "metodologías, orientación a objetos, configuraciones", "at": 0.3 },
+        { "t": "Interfaz y rapidez", "d": "lo que el mercado pide; lo formal no ayuda en eso", "at": 0.6 },
+        { "t": "No escalan", "d": "bien en sistemas críticos pequeños", "c": "#ff5d5d", "at": 0.9 } ] } },
+    { "id": "b07", "text": "Hay dos aproximaciones. La algebraica describe el sistema mediante operaciones y sus relaciones. La basada en modelos construye un modelo con conjuntos y sucesiones, e indica cómo cada operación modifica el estado del sistema.",
+      "scene": { "type": "compare", "heading": "Dos aproximaciones", "left": "Algebraica", "right": "Basada en modelos", "rows": [
+        { "k": "Describe", "l": "Operaciones y sus relaciones", "r": "Un modelo con conjuntos y sucesiones; cómo cambia el estado", "at": 0.15 },
+        { "k": "Útil para", "l": "Interfaces (tipos abstractos): oculta el estado", "r": "Comportamiento: pre y postcondiciones sobre el estado", "at": 1.2 },
+        { "k": "Secuencial", "l": "Larch, OBJ", "r": "Z, VDM, B", "at": 1.7 },
+        { "k": "Concurrente", "l": "Lotos", "r": "CSP, redes de Petri", "at": 1.9 } ] } },
+    { "id": "b08", "text": "¿Cuándo usar cada una? La algebraica sirve para especificar interfaces, como conjuntos de clases o tipos abstractos, porque oculta el estado y se basa en las relaciones entre operaciones. La basada en modelos muestra el estado y simplifica especificar el comportamiento, con precondiciones y postcondiciones." },
+    { "id": "b09", "text": "Los lenguajes: algebraicos secuenciales, Larch y OBJ; algebraicos concurrentes, Lotos. Basados en modelos secuenciales: Z, VDM y B; y concurrentes: CSP y redes de Petri." },
+    { "id": "b10", "text": "Puntos clave: las especificaciones formales complementan a las informales, porque son precisas y no ambiguas; obligan a analizar los requerimientos al principio, cuando corregir es más barato; y son excelentes para sistemas críticos, donde importan la seguridad y la confiabilidad.",
+      "scene": { "type": "check", "heading": "Puntos clave", "items": [
+        { "t": "Complementan a las informales: precisas, sin ambigüedad", "at": 0.1 }, { "t": "Obligan a analizar requerimientos temprano (más barato)", "at": 0.4 }, { "t": "Ideales para sistemas críticos: seguridad y confiabilidad", "at": 0.75 } ] } },
+    { "id": "b11", "text": "Una última: el lenguaje Z, ¿a qué aproximación pertenece? Basada en modelos, para sistemas secuenciales.",
+      "scene": { "type": "quiz", "heading": "¿A qué aproximación pertenece Z?", "q": "El lenguaje de especificación Z corresponde a la aproximación…", "options": ["Algebraica secuencial", "Algebraica concurrente", "Basada en modelos, secuencial", "Basada en modelos, concurrente"], "answer": 2, "at": 0.55, "why": "Z, VDM y B: modelos secuenciales. CSP y redes de Petri: modelos concurrentes." } }
+  ]
+}

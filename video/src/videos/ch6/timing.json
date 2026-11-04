@@ -1,0 +1,94 @@
+{
+ "fps": 30,
+ "total": 5666,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-4a546a3e19.mp3",
+   "start": 18,
+   "dur": 482,
+   "audio": 469,
+   "text": "Un sistema es un conjunto de elementos que se relacionan para alcanzar un fin. Y un sistema de información, según Schach, logra un resultado empresarial: recopila, manipula, almacena y genera reportes sobre las actividades del negocio, para ayudar a la administración."
+  },
+  {
+   "id": "b02",
+   "file": "b02-2a463ff199.mp3",
+   "start": 500,
+   "dur": 250,
+   "audio": 236,
+   "text": "Hay muchas clasificaciones, pero la materia se enfoca en tres: sistemas de tiempo real, sistemas distribuidos y sistemas embebidos."
+  },
+  {
+   "id": "b03",
+   "file": "b03-04a96d1ea6.mp3",
+   "start": 750,
+   "dur": 597,
+   "audio": 584,
+   "text": "Un sistema de tiempo real tiene que interactuar rápido con su entorno y responder en el tiempo especificado. El intervalo entre entrada y salida suele ser muy pequeño. Su eficiencia no depende solo de que el resultado sea correcto, sino también del momento en que lo entrega. Por eso su característica principal es la predictibilidad."
+  },
+  {
+   "id": "b04",
+   "file": "b04-ff2702a194.mp3",
+   "start": 1347,
+   "dur": 499,
+   "audio": 485,
+   "text": "Es más complejo de lo que parece: todas las interacciones entre componentes afectan el resultado temporal. Su diseño tiene tres fases: identificar tareas y restricciones temporales, codificar los programas, y medir el tiempo de cómputo de cada tarea para analizar la planificación."
+  },
+  {
+   "id": "b05",
+   "file": "b05-2bda93b835.mp3",
+   "start": 1846,
+   "dur": 598,
+   "audio": 585,
+   "text": "Sus componentes incluyen manejo de interrupciones, bases de datos y lenguajes de tiempo real, sincronización y comunicación de tareas, y sistemas operativos de tiempo real, donde lo importante no es el usuario sino los procesos. Ejemplos: VxWorks o Lynx OS. Se usan sobre todo para controlar entornos con sensores."
+  },
+  {
+   "id": "b06",
+   "file": "b06-b18c0da5d4.mp3",
+   "start": 2444,
+   "dur": 636,
+   "audio": 622,
+   "text": "Un sistema distribuido, según Sommerville, es aquel en el que el procesamiento se distribuye sobre varias computadoras en vez de estar en una sola máquina. Y hoy, prácticamente todos los grandes sistemas son distribuidos. Las computadoras están separadas físicamente, cada una con su hardware y software, pero conectadas por una red, y se diseñan como un sistema único."
+  },
+  {
+   "id": "b07",
+   "file": "b07-e045b3e14b.mp3",
+   "start": 3080,
+   "dur": 663,
+   "audio": 649,
+   "text": "Sus ventajas: compartir hardware y software, como impresoras o discos; basarse en sistemas abiertos con protocolos estándar; ejecutar procesos concurrentes; ser escalables; y tener mayor tolerancia a fallos, porque si falla una computadora no cae toda la red, aunque el servicio se degrade un poco. Como contrapartida, probarlos cuesta más tiempo y dinero que un sistema independiente."
+  },
+  {
+   "id": "b08",
+   "file": "b08-e82c6713a2.mp3",
+   "start": 3743,
+   "dur": 544,
+   "audio": 531,
+   "text": "Los sistemas embebidos, o empotrados, tienen funciones que no están a la vista del usuario. Hacen una o pocas funciones, generalmente en tiempo real, y sus componentes están en una placa que puede no parecer una computadora: el reloj de un taxi o un microondas. Suelen programarse en ensamblador."
+  },
+  {
+   "id": "b09",
+   "file": "b09-bcdfb23159.mp3",
+   "start": 4287,
+   "dur": 412,
+   "audio": 398,
+   "text": "Características: se fabrican en forma masiva para bajar costos; usan procesadores y memorias pequeños; si falla un elemento hay que reparar o reemplazar toda la placa; y sus controladores pueden ser más lentos que los de una computadora personal."
+  },
+  {
+   "id": "b10",
+   "file": "b10-96d0e9eeba.mp3",
+   "start": 4699,
+   "dur": 595,
+   "audio": 581,
+   "text": "Comparemos. El tiempo real se define por responder a tiempo y de forma predecible. El distribuido, por repartir el procesamiento en varias computadoras en red. El embebido, por estar oculto dentro de un dispositivo con pocas funciones. Y pueden combinarse: un embebido suele ser de tiempo real."
+  },
+  {
+   "id": "b11",
+   "file": "b11-8f94a5b35a.mp3",
+   "start": 5293,
+   "dur": 328,
+   "audio": 315,
+   "text": "Una pregunta como la de la autoevaluación: la correctitud del resultado y el tiempo en que se entrega, ¿para qué tipo de sistema son más críticos? Para los sistemas de tiempo real."
+  }
+ ]
+}
