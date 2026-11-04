@@ -1,0 +1,198 @@
+{
+ "fps": 30,
+ "total": 10723,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-b9f8c27c2d.mp3",
+   "start": 18,
+   "dur": 397,
+   "audio": 384,
+   "text": "En la parte práctica del parcial vas a recibir una narrativa de negocio y vas a tener que producir cuatro cosas: la lista de requerimientos, el diagrama de casos de uso, la descripción de un caso de uso y su diagrama de secuencia."
+  },
+  {
+   "id": "b02",
+   "file": "b02-eaa2fe0c04.mp3",
+   "start": 415,
+   "dur": 369,
+   "audio": 356,
+   "text": "Cada una de esas herramientas tiene que llegar, por separado, al sesenta por ciento. En este video resolvemos las dos primeras, y lo hacemos con el ejemplo que usó la cátedra: la biblioteca Kameral."
+  },
+  {
+   "id": "b03",
+   "file": "b03-ba191f84f0.mp3",
+   "start": 784,
+   "dur": 390,
+   "audio": 377,
+   "text": "Primero, leemos la narrativa por párrafos. La biblioteca permite que las personas se asocien para acceder al préstamo de libros. El trámite se hace en la sede, donde las atiende un bibliotecario."
+  },
+  {
+   "id": "b04",
+   "file": "b04-f7154c80c8.mp3",
+   "start": 1174,
+   "dur": 415,
+   "audio": 401,
+   "text": "Cada socio paga una cuota anual. El socio retira un solo libro por vez, pidiéndoselo al bibliotecario, y tiene diez días para devolverlo. Si la cuota está impaga, se le puede cobrar en ese momento."
+  },
+  {
+   "id": "b05",
+   "file": "b05-656e4f3639.mp3",
+   "start": 1589,
+   "dur": 421,
+   "audio": 408,
+   "text": "Periódicamente, el coordinador revisa si hay préstamos vencidos y le manda un mail al socio. Y cuando el bibliotecario recibe una devolución, verifica si estaba vencida; en ese caso, el socio queda inhabilitado un mes."
+  },
+  {
+   "id": "b06",
+   "file": "b06-64b190f558.mp3",
+   "start": 2010,
+   "dur": 359,
+   "audio": 346,
+   "text": "Mientras leemos, anotamos quiénes aparecen: una persona que todavía no es socia, el socio, el bibliotecario y el coordinador. Ahora viene la pregunta más importante de todo el ejercicio."
+  },
+  {
+   "id": "b07",
+   "file": "b07-1b1b051014.mp3",
+   "start": 2369,
+   "dur": 493,
+   "audio": 480,
+   "text": "¿Quién viene de afuera a buscar algo, y quién atiende? La persona quiere asociarse. El socio quiere retirar y devolver libros. El coordinador quiere detectar los vencidos y reclamar. Los tres persiguen un objetivo frente al negocio."
+  },
+  {
+   "id": "b08",
+   "file": "b08-7894005858.mp3",
+   "start": 2862,
+   "dur": 548,
+   "audio": 534,
+   "text": "El bibliotecario, en cambio, procesa lo que otros piden. Para la cátedra, es parte del sistema. Gabriel Taboada lo dijo así: modelamos el negocio; hay un sistema y hay entidades externas. Si todo empieza en el bibliotecario, estás pensando en una computadora."
+  },
+  {
+   "id": "b09",
+   "file": "b09-95b87aaddd.mp3",
+   "start": 3410,
+   "dur": 418,
+   "audio": 405,
+   "text": "Pensalo como un supermercado: el proceso de negocio es que el cliente entra, toma la mercadería y la paga. El repositor y el personal de limpieza existen, pero están adentro; no son actores del proceso que genera valor."
+  },
+  {
+   "id": "b10",
+   "file": "b10-c5dfa1ff79.mp3",
+   "start": 3828,
+   "dur": 366,
+   "audio": 352,
+   "text": "Ya podemos dibujar. Primero, un rectángulo: la frontera del sistema, con su nombre en el borde interno. Todo lo que el sistema hace va adentro; los actores van siempre afuera."
+  },
+  {
+   "id": "b11",
+   "file": "b11-b7d0016bd7.mp3",
+   "start": 4194,
+   "dur": 260,
+   "audio": 247,
+   "text": "Ubicamos los actores con su rol, nunca con un nombre propio: la persona no asociada y el coordinador a la izquierda, el socio a la derecha."
+  },
+  {
+   "id": "b12",
+   "file": "b12-91ef97a495.mp3",
+   "start": 4454,
+   "dur": 393,
+   "audio": 379,
+   "text": "Ahora, un caso de uso por cada objetivo. Un caso de uso es el objetivo que el actor quiere lograr al interactuar con el sistema; se dibuja como una elipse y se nombra con un verbo en infinitivo y el objeto principal."
+  },
+  {
+   "id": "b13",
+   "file": "b13-966551b3ab.mp3",
+   "start": 4847,
+   "dur": 490,
+   "audio": 477,
+   "text": "Caso de uso uno: alta de socio. Lo inicia la persona no asociada, y al terminar el socio queda registrado. Caso de uso dos: solicitar libro, que inicia el socio. Caso de uso tres: devolver libro, también del socio."
+  },
+  {
+   "id": "b14",
+   "file": "b14-f90725486b.mp3",
+   "start": 5337,
+   "dur": 514,
+   "audio": 500,
+   "text": "Caso de uso cuatro: informe de préstamos. Lo inicia el coordinador, y el socio participa porque recibe el mail de reclamo. Fijate en la diferencia: el coordinador es el actor primario, el que inicia; el socio es secundario, el que el caso de uso necesita."
+  },
+  {
+   "id": "b15",
+   "file": "b15-773dd12c39.mp3",
+   "start": 5851,
+   "dur": 518,
+   "audio": 504,
+   "text": "Las líneas que unen actores y casos de uso se llaman asociaciones. Revisá cada elipse: quién la inicia y quién más participa. Un actor sin línea, o una línea hacia un caso que no usa, es exactamente el error de conexiones que la cátedra corrigió en los trabajos prácticos."
+  },
+  {
+   "id": "b16",
+   "file": "b16-6cb829c757.mp3",
+   "start": 6369,
+   "dur": 407,
+   "audio": 394,
+   "text": "Con el diagrama armado, la lista de requerimientos sale casi sola. Como en el ejemplo de la profesora, cada ítem empieza con: el sistema debe gestionar, o el sistema debe proveer, seguido de un proceso de negocio completo."
+  },
+  {
+   "id": "b17",
+   "file": "b17-397eba18c1.mp3",
+   "start": 6776,
+   "dur": 464,
+   "audio": 450,
+   "text": "El sistema debe gestionar el alta de socios; debe gestionar la solicitud de libros; debe gestionar las devoluciones; y debe proveer un informe de préstamos vencidos. Taboada lo resumió: son las cuatro funciones básicas, son los cuatro requerimientos."
+  },
+  {
+   "id": "b18",
+   "file": "b18-bdb1c16ed2.mp3",
+   "start": 7239,
+   "dur": 494,
+   "audio": 480,
+   "text": "Una regla más de la teoría: cada caso de uso lo inicia un solo actor. Si en una biblioteca universitaria pueden pedir libros tanto alumnos como docentes, se crea un actor general, usuario de biblioteca, y alumno y docente heredan de él con una flecha de punta triangular."
+  },
+  {
+   "id": "b19",
+   "file": "b19-a5588f2822.mp3",
+   "start": 7733,
+   "dur": 251,
+   "audio": 238,
+   "text": "Veamos ahora los errores que más puntos cuestan. Este diagrama tiene cuatro, y todos aparecieron en trabajos reales."
+  },
+  {
+   "id": "b20",
+   "file": "b20-bbf8bc1006.mp3",
+   "start": 7984,
+   "dur": 541,
+   "audio": 528,
+   "text": "Uno: el bibliotecario como actor; es parte del sistema. Dos: un actor con nombre propio, Juan Pérez, en lugar del rol socio. Tres: pantalla de login no es un objetivo de negocio, es un detalle técnico. Y cuatro: falta la persona que quiere asociarse."
+  },
+  {
+   "id": "b21",
+   "file": "b21-714e351228.mp3",
+   "start": 8526,
+   "dur": 443,
+   "audio": 429,
+   "text": "Otro error frecuente es el de nivel. Si tu diagrama de Kameral tiene quince elipses con altas, bajas, modificaciones, consultas y logins, bajaste demasiado. La solución docente tiene cuatro casos de uso."
+  },
+  {
+   "id": "b22",
+   "file": "b22-3c5419fc11.mp3",
+   "start": 8968,
+   "dur": 623,
+   "audio": 609,
+   "text": "Probemos con una variante nueva. Una bicicletería alquila bicicletas por hora. La persona se registra como cliente; el cliente alquila y devuelve en el local, atendido por un encargado. Si hay daño, la bicicleta va a un taller externo, que avisa cuando la reparó. Cada semana, el dueño recibe un resumen."
+  },
+  {
+   "id": "b23",
+   "file": "b23-e402031fbc.mp3",
+   "start": 9591,
+   "dur": 592,
+   "audio": 579,
+   "text": "Aplicamos la misma pregunta. El encargado atiende: queda adentro. Afuera quedan la persona no registrada, el cliente, el taller externo y el dueño. Y los casos de uso son: registrar cliente, alquilar bicicleta, devolver bicicleta, informar reparación y emitir el resumen semanal."
+  },
+  {
+   "id": "b24",
+   "file": "b24-b719c30707.mp3",
+   "start": 10183,
+   "dur": 494,
+   "audio": 481,
+   "text": "Antes de pasar a la descripción, controlá siempre esta lista: actores externos con su rol, ningún empleado que atiende como actor, casos de uso con verbo y objeto, a nivel de negocio, un único iniciador por caso, actores afuera de la frontera y todas las asociaciones revisadas."
+  }
+ ]
+}

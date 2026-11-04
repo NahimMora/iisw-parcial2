@@ -1,0 +1,12 @@
+node_modules
+dist
+*.local
+.DS_Store
+video/node_modules
+video/out
+test-results
+playwright-report
+# nunca publicar materiales de la cátedra
+private/
+*.vtt
+video/public/audio/
