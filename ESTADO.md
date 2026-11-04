@@ -31,13 +31,13 @@
 |---|---|---|---|
 | 1 Requerimientos y casos de uso | publicado | ch1-casos-de-uso.mp4 (5:57) | |
 | 2 Descripción de CU | publicado | ch2-descripcion-cu.mp4 (4:23) | |
-| 3 Diagrama de secuencia | contenido escrito, video pendiente | — | |
+| 3 Diagrama de secuencia | publicado | ch3-secuencia.mp4 (6:02) | |
 | 4 Prototipos e HU | pendiente | — | |
 | 5 Pruebas | pendiente | — | |
 | 6 Tipos de sistemas | pendiente | — | |
 | 7 Reingeniería y formales | pendiente | — | |
-| Entrenador | pendiente | — | |
-| Simulacros | pendiente | — | |
+| Entrenador | publicado (5 niveles) | — | validadores con tests |
+| Simulacros | publicado | — | teórico 22 preg. + práctico con rúbrica |
 
 ## Problemas detectados / decisiones
 - Figuras UML del PDF de teoría son imágenes: se reconstruyeron desde el texto y la clase grabada.

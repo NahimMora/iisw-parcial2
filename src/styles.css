@@ -276,3 +276,6 @@ select.right { border-color: var(--good); background: var(--good-soft); } select
 .narrative { background: var(--mid-soft); border-left: 5px solid var(--mid); padding: 10px 14px; border-radius: 8px; white-space: pre-line; }
 .tool-score { display: grid; grid-template-columns: 1fr 70px 110px; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--line); }
 .pass { color: var(--good); font-weight: 800; } .fail { color: var(--bad); font-weight: 800; }
+@media (max-width: 700px) { .topbar { position: static; } }
+.editor > * { min-width: 0; }
+@media (max-width: 700px) { .editor .tbl th, .editor .tbl td { font-size: .78rem; padding: 4px; } }

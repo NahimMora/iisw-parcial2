@@ -1,9 +1,10 @@
 import type { Chapter, Question } from './types';
 import { ch1 } from './chapters/ch1';
 import { ch2 } from './chapters/ch2';
+import { ch3 } from './chapters/ch3';
 import { stubs } from './chapters/stubs';
 
-const ready: Chapter[] = [ch1, ch2];
+const ready: Chapter[] = [ch1, ch2, ch3];
 const readyIds = new Set(ready.map((c) => c.id));
 
 /** Todos los capítulos en orden; los no publicados aparecen "En preparación". */

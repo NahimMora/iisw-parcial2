@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CHAPTERS, EXAM_DATE, READY } from '../content/registry';
+import { CHAPTERS, EXAM_DATE, READY, questionIndex } from '../content/registry';
 import { useProgress } from '../lib/progress';
 import { chapterMastery, chapterState, remainingMinutes } from '../lib/mastery';
 import { stateLabel } from './ChapterPage';
@@ -19,7 +19,8 @@ export function Home() {
   const mastered = READY.filter((c) => chapterState(c, p) === 'dominado').length;
   const avg = READY.length ? READY.reduce((s, c) => s + chapterMastery(c, p), 0) / total : 0;
   const remaining = remainingMinutes(READY, p) + CHAPTERS.filter((c) => c.status !== 'ready').reduce((s, c) => s + c.minutes.video + c.minutes.practice, 0);
-  const openErrors = Object.values(p.errors).filter((e) => !e.resolved).length;
+  const qi = questionIndex();
+  const openErrors = Object.values(p.errors).filter((e) => !e.resolved && qi[e.qid]).length;
   const cont = (p.lastChapter && READY.find((c) => c.id === p.lastChapter && chapterState(c, p) !== 'dominado'))
     ?? READY.find((c) => chapterState(c, p) !== 'dominado') ?? READY[0];
 
