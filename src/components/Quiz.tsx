@@ -20,7 +20,7 @@ export function Quiz({ questions, chapterFor, mode, chapterId, title, onGraded, 
   const [rs, setRs] = useState<Record<string, Response>>(init);
   const [result, setResult] = useState<QuizResult | null>(null);
   const [round, setRound] = useState(0);
-  const pending = useMemo(() => questions.filter((q) => !isAnswered(q, rs[q.id])).length, [questions, rs]);
+  const pending = useMemo(() => questions.filter((q) => !isAnswered(q, rs[q.id] ?? emptyResponse(q))).length, [questions, rs]);
 
   const correct = () => {
     const res = gradeAll(questions, rs);
@@ -42,7 +42,7 @@ export function Quiz({ questions, chapterFor, mode, chapterId, title, onGraded, 
       {title && <h3>{title}</h3>}
       {result && <ResultBox id={`quiz-result-${mode}`} res={result} questions={questions} conceptNames={conceptNames} onRetry={retry} />}
       {questions.map((q, i) => (
-        <QuestionView key={q.id} q={q} index={i} r={rs[q.id]} graded={result?.grades[q.id]}
+        <QuestionView key={q.id} q={q} index={i} r={rs[q.id] ?? emptyResponse(q)} graded={result?.grades[q.id]}
           onChange={(r) => setRs((prev) => ({ ...prev, [q.id]: r }))} />
       ))}
       {!result ? (

@@ -12,8 +12,8 @@ const EV_HELP: Record<Evidence, string> = {
 
 /** Texto con **negritas** simples. */
 export function Rich({ text }: { text: string }) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return <>{parts.map((p, i) => (p.startsWith('**') ? <b key={i}>{p.slice(2, -2)}</b> : <span key={i}>{p}</span>))}</>;
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*\s][^*]*\*)/g);
+  return <>{parts.map((p, i) => (p.startsWith('**') ? <b key={i}>{p.slice(2, -2)}</b> : p.length > 2 && p.startsWith('*') && p.endsWith('*') ? <i key={i}>{p.slice(1, -1)}</i> : <span key={i}>{p}</span>))}</>;
 }
 
 export function TheoryBlocks({ blocks }: { blocks: TheoryBlock[] }) {

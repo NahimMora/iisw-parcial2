@@ -4,7 +4,11 @@ import type { ConceptMapSpec, MapNode } from '../content/types';
 const NW = 150, NH = 44;
 
 export function ConceptMap({ spec }: { spec: ConceptMapSpec }) {
-  const [view, setView] = useState({ x: 0, y: 0, k: 1 });
+  const narrow = typeof window !== 'undefined' && window.innerWidth < 700;
+  const [view, setView] = useState({ x: 0, y: 0, k: narrow ? 1.7 : 1 });
+  const [mode, setMode] = useState<'mapa' | 'lista'>('mapa');
+  const ptrs = useRef(new Map<number, { x: number; y: number }>());
+  const pinch = useRef<{ d: number; k: number } | null>(null);
   const [sel, setSel] = useState<MapNode | null>(null);
   const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
   const drag = useRef<{ x: number; y: number; vx: number; vy: number } | null>(null);
@@ -20,7 +24,8 @@ export function ConceptMap({ spec }: { spec: ConceptMapSpec }) {
   const byId = Object.fromEntries(spec.nodes.map((n) => [n.id, n]));
   const hasKids = (id: string) => spec.nodes.some((n) => n.parent === id);
 
-  const zoom = (f: number) => setView((v) => ({ ...v, k: Math.min(2.6, Math.max(0.5, v.k * f)) }));
+  const zoom = (f: number) => setView((v) => ({ ...v, k: Math.min(3.2, Math.max(0.5, v.k * f)) }));
+  const pdist = () => { const a = [...ptrs.current.values()]; return a.length < 2 ? 0 : Math.hypot(a[0].x - a[1].x, a[0].y - a[1].y); };
   const scale = () => { const r = svgRef.current?.getBoundingClientRect(); return r ? spec.width / r.width : 1; };
 
   return (
@@ -28,18 +33,24 @@ export function ConceptMap({ spec }: { spec: ConceptMapSpec }) {
       <div className="cmap-tools">
         <button type="button" className="btn small" onClick={() => zoom(1.2)} aria-label="Acercar">＋</button>
         <button type="button" className="btn small" onClick={() => zoom(1 / 1.2)} aria-label="Alejar">－</button>
-        <button type="button" className="btn small" onClick={() => setView({ x: 0, y: 0, k: 1 })}>Centrar</button>
-        <span className="hint">Arrastrá para moverte · rueda o botones para zoom · tocá un nodo para ver su explicación · ⊕/⊖ expande o contrae</span>
+        <button type="button" className="btn small" onClick={() => setView({ x: 0, y: 0, k: narrow ? 1.7 : 1 })}>Centrar</button>
+        <button type="button" className="btn small ghost" onClick={() => setMode(mode === 'mapa' ? 'lista' : 'mapa')}>{mode === 'mapa' ? '☰ Ver como lista' : '◇ Ver como mapa'}</button>
+        <span className="hint">{narrow ? 'Arrastrá con un dedo · pellizcá para zoom · tocá un nodo' : 'Arrastrá para moverte · rueda o botones para zoom · tocá un nodo para ver su explicación · ⊕/⊖ expande o contrae'}</span>
       </div>
       <div className="cmap-legend">
         {Object.entries(spec.groups).map(([k, g]) => <span key={k}><i style={{ background: g.color }} />{g.label}</span>)}
       </div>
+      {mode === 'lista' ? <MapList spec={spec} /> : (
       <div className="cmap-stage">
         <svg ref={svgRef} viewBox={`0 0 ${spec.width} ${spec.height}`} className="cmap-svg"
           onWheel={(e) => { zoom(e.deltaY < 0 ? 1.1 : 1 / 1.1); }}
-          onPointerDown={(e) => { (e.target as Element).setPointerCapture?.(e.pointerId); drag.current = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y }; }}
-          onPointerMove={(e) => { const d = drag.current; if (!d) return; const s = scale(); setView((v) => ({ ...v, x: d.vx + (e.clientX - d.x) * s / v.k, y: d.vy + (e.clientY - d.y) * s / v.k })); }}
-          onPointerUp={() => { drag.current = null; }} onPointerLeave={() => { drag.current = null; }}>
+          onPointerDown={(e) => { ptrs.current.set(e.pointerId, { x: e.clientX, y: e.clientY }); if (ptrs.current.size === 2) { pinch.current = { d: pdist(), k: view.k }; drag.current = null; } else drag.current = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y }; }}
+          onPointerMove={(e) => {
+            if (ptrs.current.has(e.pointerId)) ptrs.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
+            if (pinch.current && ptrs.current.size === 2) { const d = pdist(); const pk = pinch.current; if (pk.d > 0) setView((v) => ({ ...v, k: Math.min(3.2, Math.max(0.5, pk.k * d / pk.d)) })); return; }
+            const d = drag.current; if (!d) return; const s = scale(); setView((v) => ({ ...v, x: d.vx + (e.clientX - d.x) * s / v.k, y: d.vy + (e.clientY - d.y) * s / v.k }));
+          }}
+          onPointerUp={(e) => { ptrs.current.delete(e.pointerId); pinch.current = null; drag.current = null; }} onPointerCancel={(e) => { ptrs.current.delete(e.pointerId); pinch.current = null; drag.current = null; }} onPointerLeave={(e) => { ptrs.current.delete(e.pointerId); drag.current = null; }}>
           <defs><marker id="cm-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--muted)" /></marker></defs>
           <g transform={`translate(${spec.width / 2} ${spec.height / 2}) scale(${view.k}) translate(${-spec.width / 2 + view.x} ${-spec.height / 2 + view.y})`}>
             {spec.edges.filter((e) => vis.has(e.from) && vis.has(e.to)).map((e, i) => {
@@ -74,8 +85,23 @@ export function ConceptMap({ spec }: { spec: ConceptMapSpec }) {
           {sel ? (<><h4>{sel.label}</h4><p>{sel.desc}</p><button type="button" className="btn small" onClick={() => setSel(null)}>Cerrar</button></>) : <p className="hint">Elegí un nodo.</p>}
         </aside>
       </div>
+      )}
     </div>
   );
+}
+
+function MapList({ spec }: { spec: ConceptMapSpec }) {
+  const kids = (id?: string) => spec.nodes.filter((n) => n.parent === id);
+  const roots = spec.nodes.filter((n) => !n.parent);
+  const rel = (id: string) => spec.edges.filter((e) => e.from === id && e.label).map((e) => `${e.label} → ${spec.nodes.find((n) => n.id === e.to)?.label}`);
+  const Item = ({ n, depth }: { n: MapNode; depth: number }) => (
+    <li style={{ borderLeftColor: spec.groups[n.group]?.color }}>
+      <b>{n.label}</b><span>{n.desc}</span>
+      {rel(n.id).map((r) => <em key={r}>{r}</em>)}
+      {kids(n.id).length > 0 && <ul>{kids(n.id).map((k) => <Item key={k.id} n={k} depth={depth + 1} />)}</ul>}
+    </li>
+  );
+  return <ul className="cmap-list">{roots.map((n) => <Item key={n.id} n={n} depth={0} />)}</ul>;
 }
 
 function lines(t: string): string[] {

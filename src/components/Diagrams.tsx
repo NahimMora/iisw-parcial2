@@ -1,3 +1,4 @@
+import { Zoomable } from './Zoomable';
 import type { CUDescription, DiagramSpec, SequenceDiagramSpec, Stereo, UseCaseDiagramSpec } from '../content/types';
 
 export function Diagram({ spec, highlight }: { spec: DiagramSpec; highlight?: Set<string> }) {
@@ -58,6 +59,7 @@ export function UseCaseDiagram({ spec, highlight }: { spec: UseCaseDiagramSpec; 
   const aById = Object.fromEntries(actors.map((a) => [a.id, a]));
   const hl = (id: string) => highlight?.has(id);
   return (
+    <Zoomable w={W}>
     <svg viewBox={`0 0 ${W} ${H}`} className="diagram" role="img" aria-label={`Diagrama de casos de uso: ${spec.system}`}>
       <defs>
         <marker id="tri-open" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M1,1 L11,6 L1,11 Z" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1.3" /></marker>
@@ -110,6 +112,7 @@ export function UseCaseDiagram({ spec, highlight }: { spec: UseCaseDiagramSpec; 
         </g>
       ))}
     </svg>
+    </Zoomable>
   );
 }
 
@@ -142,6 +145,7 @@ export function SequenceDiagram({ spec, highlight }: { spec: SequenceDiagramSpec
     for (const id of [m.from, m.to]) { const s = span[id]; span[id] = s ? [Math.min(s[0], i), Math.max(s[1], i)] : [i, i]; }
   });
   return (
+    <Zoomable w={W}>
     <svg viewBox={`0 0 ${W} ${H}`} className="diagram" role="img" aria-label="Diagrama de secuencia">
       <defs>
         <marker id="sq-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="var(--ink)" /></marker>
@@ -186,6 +190,7 @@ export function SequenceDiagram({ spec, highlight }: { spec: SequenceDiagramSpec
         );
       })}
     </svg>
+    </Zoomable>
   );
 }
 

@@ -10,6 +10,9 @@ import { QuestionView } from '../components/QuestionView';
 import { chapterOf, update, useProgress } from '../lib/progress';
 import { chapterMastery, chapterState, MASTERY_PASS } from '../lib/mastery';
 import { emptyResponse } from '../lib/grading';
+import TRANSCRIPTS_JSON from '../content/transcripts.json';
+
+const TRANSCRIPTS = TRANSCRIPTS_JSON as Record<string, string[]>;
 
 export const SECTIONS = [
   ['intro', 'Introducción'], ['teoria', 'Teoría'], ['video', 'Video'], ['mapa', 'Mapa conceptual'],
@@ -33,6 +36,7 @@ export function ChapterPage() {
       cp.lastSection = sec; d.lastChapter = ch.id;
     });
     window.scrollTo({ top: 0 });
+    document.querySelector('.tab.active')?.scrollIntoView({ inline: 'center', block: 'nearest' });
   }, [ch, sec]);
 
   if (!ch) return <div className="page"><p>Capítulo inexistente. <Link to="/">Volver</Link></p></div>;
@@ -80,11 +84,11 @@ export function ChapterPage() {
         {sec === 'mapa' && <><p className="lead">Síntesis visual de lo que viste. Usalo para repasar sin volver a ver el video.</p><ConceptMap spec={ch.map} /></>}
         {sec === 'cuaderno' && <Notebook ch={ch} />}
         {sec === 'ejercicios' && <><p className="lead">Empiezan por comprensión y avanzan hacia aplicación y evaluación. Respondé sin mirar la teoría; después presioná <b>Corregir</b>.</p>
-          <Quiz questions={ch.quiz} chapterFor={() => ch.id} mode="quiz" chapterId={ch.id} /></>}
+          <Quiz key={`${ch.id}-quiz`} questions={ch.quiz} chapterFor={() => ch.id} mode="quiz" chapterId={ch.id} /></>}
         {sec === 'correccion' && <Correction ch={ch} />}
         {sec === 'errores' && <Pitfalls ch={ch} />}
         {sec === 'dominio' && <><p className="lead">Preguntas nuevas, sin pistas. Con <b>{Math.round(MASTERY_PASS * 100)} % o más</b> el capítulo queda dominado. Si no llegás, repasá la corrección y volvé a intentarlo.</p>
-          <Quiz questions={ch.mastery} chapterFor={() => ch.id} mode="mastery" chapterId={ch.id} /></>}
+          <Quiz key={`${ch.id}-mastery`} questions={ch.mastery} chapterFor={() => ch.id} mode="mastery" chapterId={ch.id} /></>}
       </section>
 
       <div className="pager">
@@ -153,6 +157,8 @@ function VideoSection({ ch }: { ch: Chapter }) {
                 const t = Math.floor(e.currentTarget.currentTime);
                 if (t % 5 === 0 && t !== seen) update((d) => { chapterOf(d, ch.id).videoSeconds[v.id] = t; });
               }} />
+            <p className="hint mobile-only">📱 Girá el celular y usá pantalla completa para ver mejor el video.</p>
+            {TRANSCRIPTS[v.id] && <details className="transcript"><summary>Ver transcripción de la narración</summary>{TRANSCRIPTS[v.id].map((t, i) => <p key={i}>{t}</p>)}</details>}
             <p className="hint">{v.summary}{seen > 5 ? ` · Retomás desde ${Math.floor(seen / 60)}:${String(seen % 60).padStart(2, '0')}` : ''}</p>
           </div>
         );
