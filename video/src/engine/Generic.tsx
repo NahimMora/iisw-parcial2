@@ -1,6 +1,6 @@
 // Video genérico guiado por datos: cada beat del script.json declara su escena.
 import React from 'react';
-import { C, Check, Cross, Heading, Ln, Scene, Stage, Txt, Video, useT, type Timing } from './engine';
+import { Actor, C, Check, Cross, Heading, Ln, Rect, Scene, Stage, StereoIcon, Txt, UC, Video, stereoColor, useT, type Timing } from './engine';
 
 export type Item = { t: string; d?: string; c?: string; at?: number; l?: string };
 export type SceneSpec =
@@ -12,7 +12,11 @@ export type SceneSpec =
   | { type: 'check'; heading: string; items: Item[] }
   | { type: 'quiz'; heading: string; q: string; options: string[]; answer: number; at?: number; why?: string }
   | { type: 'letters'; heading: string; items: Item[] }
-  | { type: 'quote'; heading: string; quote: string; who: string; items?: Item[] };
+  | { type: 'quote'; heading: string; quote: string; who: string; items?: Item[] }
+  | { type: 'uc'; heading: string; system: string; actors: { n: string; side: 'l' | 'r'; y: number; at?: number; bad?: boolean }[]; cases: { t: string; at?: number }[]; links: { a: number; c: number; at?: number }[]; note?: Item }
+  | { type: 'seq'; heading: string; parts: { n: string; k: 'actor' | 'interface' | 'control' | 'entity'; at?: number }[]; msgs: { f: number; t: number; l: string; at?: number; c?: string }[]; note?: Item }
+  | { type: 'desc'; heading: string; rows: { k: string; v: string; at?: number; c?: string }[] }
+  | { type: 'act'; heading: string; lanes: string[]; steps: { lane: number; kind: 'start' | 'end' | 'act' | 'dec'; t?: string; no?: string; at?: number }[] };
 export interface GenericBeat { id: string; text: string; scene?: SceneSpec }
 
 const PAL = [C.iface, C.ctrl, C.entity, C.actor, C.sys, C.warn];
@@ -179,6 +183,101 @@ function Render({ id, s }: { id: string; s: SceneSpec }) {
           })}
           <Stage>{s.options.map((_, i) => i !== s.answer && <Cross key={i} x={1150} y={260 + i * 80} s={14} p={rv} />)}<Check x={1150} y={262 + s.answer * 80} p={rv} /></Stage>
           {s.why && <div style={{ position: 'absolute', left: 100, right: 100, top: 240 + s.options.length * 80, fontSize: 22, color: C.good, opacity: pf(id, (s.at ?? 0.7) + 0.08) }}>{s.why}</div>}
+        </>
+      );
+    }
+    case 'uc': {
+      const n = s.cases.length; const top = 165, bot = 610; const gap = (bot - top) / n;
+      const cy = (i: number) => top + gap * (i + 0.5);
+      const ax = (side: 'l' | 'r') => (side === 'l' ? 175 : 1105);
+      return (
+        <>
+          <Heading text={s.heading} p={p(id)} />
+          <Stage>
+            <Rect x={330} y={118} w={620} h={505} p={p(id, 0.2, 1)} />
+            <Txt x={640} y={148} size={20} color={C.sys} weight={700} p={p(id, 0.5)}>{s.system}</Txt>
+            {s.links.map((l, i) => { const a = s.actors[l.a]; const left = a.side === 'l'; return <Ln key={i} x1={ax(a.side) + (left ? 30 : -30)} y1={a.y - 10} x2={640 + (left ? -205 : 205)} y2={cy(l.c)} p={at(l, i, s.links.length)} color={C.muted} />; })}
+            {s.cases.map((c, i) => <UC key={i} cx={640} cy={cy(i)} rx={205} ry={Math.min(36, gap / 2 - 6)} text={c.t} p={at(c, i, n)} size={20} />)}
+            {s.actors.map((a, i) => <g key={i}><Actor x={ax(a.side)} y={a.y} name={a.n} p={at(a, i, s.actors.length)} color={a.bad ? C.bad : C.actor} />{a.bad && <Cross x={ax(a.side)} y={a.y - 5} s={70} p={pf(id, a.at ?? 0.5, 0.5)} />}</g>)}
+          </Stage>
+          <Note id={id} n={s.note} />
+        </>
+      );
+    }
+    case 'seq': {
+      const n = s.parts.length; const xs = s.parts.map((_, i) => 110 + (i * 1060) / Math.max(1, n - 1));
+      const top = 92, y0 = 200; const row = Math.min(42, (700 - y0) / Math.max(1, s.msgs.length));
+      return (
+        <>
+          <Stage>
+            {s.parts.map((q, i) => { const pp = at(q, i, n); return (
+              <g key={i} opacity={pp}>
+                <StereoIcon kind={q.k} x={xs[i]} y={top + 18} p={pp} r={22} />
+                <Txt x={xs[i]} y={top + 70} size={18} weight={700} color={stereoColor[q.k]} p={pp}>{q.n}</Txt>
+                <line x1={xs[i]} y1={top + 82} x2={xs[i]} y2={y0 + s.msgs.length * row} stroke={C.line} strokeWidth={2} strokeDasharray="7 7" />
+              </g>); })}
+            {s.msgs.map((m, i) => {
+              const q = at(m, i, s.msgs.length); if (q <= 0) return null;
+              const y = y0 + i * row + 6; const x1 = xs[m.f], x2 = xs[m.t];
+              const lab = `${i + 1}: ${m.c ? `[${m.c}] ` : ''}${m.l}`;
+              if (m.f === m.t) return (
+                <g key={i} opacity={Math.min(1, q * 1.5)}>
+                  <path d={`M${x1 + 7},${y - 8} h46 v20 h-40`} fill="none" stroke={C.warn} strokeWidth={2.4} markerEnd="url(#ahw)" />
+                  <Txt x={x1 + 60} y={y + 8} anchor="start" size={17} color={C.warn} p={q}>{lab}</Txt>
+                </g>);
+              const d = x2 > x1 ? 1 : -1;
+              return (
+                <g key={i}>
+                  <Ln x1={x1 + d * 7} y1={y} x2={x2 - d * 8} y2={y} p={q} color={m.c ? C.warn : C.ink} arrow={m.c ? 'ahw' : 'ah'} />
+                  <Txt x={(x1 + x2) / 2} y={y - 7} size={17} color={m.c ? C.warn : C.ink} p={q}>{lab}</Txt>
+                </g>);
+            })}
+          </Stage>
+          <div style={{ position: 'absolute', left: 0, right: 0, top: 16, textAlign: 'center', fontSize: 32, fontWeight: 800, opacity: p(id) }}>{s.heading}</div>
+          <Note id={id} n={s.note} />
+        </>
+      );
+    }
+    case 'desc':
+      return (
+        <>
+          <Heading text={s.heading} p={p(id)} />
+          <div style={{ position: 'absolute', left: 110, right: 110, top: 108, border: `2px solid ${C.line}`, borderRadius: 12, overflow: 'hidden' }}>
+            {s.rows.map((r, i) => {
+              const q = at(r, i, s.rows.length);
+              return (
+                <div key={i} style={{ display: 'grid', gridTemplateColumns: '220px 1fr', borderTop: i ? `1px solid ${C.line}` : 'none', opacity: Math.max(0.06, q), background: q > 0.5 && r.c ? `${r.c}22` : 'transparent' }}>
+                  <div style={{ padding: '4px 14px', fontWeight: 800, color: r.c ?? C.iface, fontSize: 19, background: 'rgba(255,255,255,.04)' }}>{r.k}</div>
+                  <div style={{ padding: '4px 14px', fontSize: 19 }}>{r.v}</div>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      );
+    case 'act': {
+      const lw = 1000 / s.lanes.length; const lx = (l: number) => 140 + lw * l + lw / 2;
+      const rowH = Math.min(62, 500 / s.steps.length); const sy = (i: number) => 178 + i * rowH + rowH / 2;
+      return (
+        <>
+          <Heading text={s.heading} p={p(id)} />
+          <Stage>
+            {s.lanes.map((l, i) => <g key={i}><Rect x={140 + lw * i} y={112} w={lw} h={596} p={p(id, 0.1, 0.8)} color={C.line} r={0} /><Txt x={lx(i)} y={150} size={22} weight={700} color={C.sys} p={p(id, 0.3)}>{l}</Txt></g>)}
+            {s.steps.slice(1).map((st, k) => { const a = s.steps[k]; return <Ln key={k} x1={lx(a.lane)} y1={sy(k) + (a.kind === 'start' ? 11 : 21)} x2={lx(st.lane)} y2={sy(k + 1) - (st.kind === 'end' ? 15 : 22)} p={at(st, k + 1, s.steps.length)} arrow="ah" color={C.muted} />; })}
+            {s.steps.map((st, i) => {
+              const q = at(st, i, s.steps.length); const x = lx(st.lane), y = sy(i);
+              if (st.kind === 'start') return <circle key={i} cx={x} cy={y} r={11} fill={C.ink} opacity={q} />;
+              if (st.kind === 'end') return <g key={i} opacity={q}><circle cx={x} cy={y} r={14} fill="none" stroke={C.ink} strokeWidth={2.5} /><circle cx={x} cy={y} r={8} fill={C.ink} /></g>;
+              if (st.kind === 'dec') return (
+                <g key={i} opacity={q}>
+                  <polygon points={`${x},${y - 22} ${x + 125},${y} ${x},${y + 22} ${x - 125},${y}`} fill={C.bg} stroke={C.warn} strokeWidth={2.5} />
+                  <Txt x={x} y={y + 7} size={18}>{st.t}</Txt>
+                  <Txt x={x + 12} y={y + 38} size={15} color={C.good} anchor="start">[sí]</Txt>
+                  {st.no && <><Ln x1={x - 125} y1={y} x2={x - 200} y2={y} arrow="ahr" color={C.bad} /><Txt x={x - 160} y={y - 8} size={15} color={C.bad}>[no]</Txt><Txt x={x - 208} y={y + 6} size={17} anchor="end" color={C.bad}>{st.no}</Txt></>}
+                </g>);
+              return <g key={i} opacity={q}><rect x={x - 170} y={y - 21} width={340} height={42} rx={21} fill={C.bg} stroke={C.iface} strokeWidth={2.4} /><Txt x={x} y={y + 7} size={19}>{st.t}</Txt></g>;
+            })}
+          </Stage>
         </>
       );
     }

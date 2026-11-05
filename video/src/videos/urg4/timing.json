@@ -1,0 +1,102 @@
+{
+ "fps": 30,
+ "total": 7300,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-937ecdfc98.mp3",
+   "start": 18,
+   "dur": 386,
+   "audio": 372,
+   "text": "Teoría express. Estas son las afirmaciones que más se repiten en los parciales, y cómo justificarlas en una o dos líneas. Recordá: primero escribís verdadero o falso, y después el porqué."
+  },
+  {
+   "id": "b02",
+   "file": "b02-5cdce3c94e.mp3",
+   "start": 404,
+   "dur": 469,
+   "audio": 455,
+   "text": "Uno. El modelo de análisis es de implementación y el de diseño es conceptual. Falso: es al revés. El análisis es conceptual y describe el qué. El diseño es el esquema de implementación y describe el cómo."
+  },
+  {
+   "id": "b03",
+   "file": "b03-f473c3c081.mp3",
+   "start": 872,
+   "dur": 545,
+   "audio": 531,
+   "text": "Dos. La extensión siempre proviene de un error o excepción. Falso. El include se ejecuta siempre. El extend se ejecuta solo bajo ciertas condiciones, y puede ser una opción, no necesariamente un error. Por ejemplo, tomar un café extiende cenar."
+  },
+  {
+   "id": "b04",
+   "file": "b04-988600dece.mp3",
+   "start": 1417,
+   "dur": 497,
+   "audio": 484,
+   "text": "Tres. Un actor primario en un caso de uso no puede ser secundario en otro. Falso: primario o secundario se define en cada caso de uso. El primario lo inicia, el secundario participa, y el mismo actor puede ser primario en uno y secundario en otro."
+  },
+  {
+   "id": "b05",
+   "file": "b05-c174caf5de.mp3",
+   "start": 1914,
+   "dur": 628,
+   "audio": 614,
+   "text": "Cuatro. La validación y verificación se hacen al finalizar el desarrollo. Falso: se hacen durante todo el ciclo, porque un error detectado tarde cuesta mucho más. Verificar es preguntarse si lo construimos bien, según la especificación. Validar es preguntarse si construimos lo correcto, lo que el cliente necesita."
+  },
+  {
+   "id": "b06",
+   "file": "b06-1954cd900f.mp3",
+   "start": 2542,
+   "dur": 797,
+   "audio": 783,
+   "text": "Cinco, seis y siete, de sistemas. En el diagrama de colaboración es necesario numerar los mensajes: verdadero. Los sistemas embebidos generalmente se escriben en ensamblador: verdadero. Un embebido controla un equipo y queda oculto, como en un reloj digital: verdadero. Y la correctitud y el tiempo de respuesta son más críticos en los sistemas de tiempo real, donde una respuesta correcta pero tarde es una falla."
+  },
+  {
+   "id": "b07",
+   "file": "b07-c067131005.mp3",
+   "start": 3339,
+   "dur": 722,
+   "audio": 708,
+   "text": "Ocho. Cuantificar no afecta la solución. Falso: hay que saber qué hacer y cuánto, porque un mismo problema con distintos volúmenes lleva a soluciones distintas. Se cuantifican requisitos estáticos, como usuarios simultáneos, terminales y volumen de datos, y dinámicos, como transacciones por período y tiempos de respuesta. Así que tampoco es cierto que solo se cuantifican entidades."
+  },
+  {
+   "id": "b09",
+   "file": "b09-7c83d30a61.mp3",
+   "start": 4061,
+   "dur": 528,
+   "audio": 514,
+   "text": "Nueve. Atributos de una buena especificación de requerimientos, la SRS. Correcta, no ambigua, completa, verificable, consistente, modificable, trazable y anotada, por necesidad y estabilidad. Con nombrar tres y explicarlos en una línea alcanza."
+  },
+  {
+   "id": "b10",
+   "file": "b10-13a2d645ae.mp3",
+   "start": 4589,
+   "dur": 834,
+   "audio": 821,
+   "text": "Diez. Trazabilidad: que el origen de cada requerimiento sea claro y se pueda referenciar después. Hay cuatro tipos. Hacia atrás desde los requerimientos: por qué existe cada uno. Hacia adelante hasta los requerimientos: los documentos previos se referencian al SRS. Hacia atrás hasta los requerimientos: cada parte del software dice qué requerimiento cumple. Y hacia adelante desde los requerimientos: qué componentes satisfacen cada uno."
+  },
+  {
+   "id": "b11",
+   "file": "b11-15461a2b92.mp3",
+   "start": 5423,
+   "dur": 700,
+   "audio": 686,
+   "text": "Once, los tres objetos del análisis, que siempre preguntan junto con para qué sirve el diagrama de secuencia: mostrar en el tiempo cómo colaboran los objetos para realizar un caso de uso. Interfaz: comunica a los actores con el sistema. Control: la lógica que no le corresponde a nadie más, y coordina. Entidad: la información que se guarda en el tiempo y sobrevive al caso de uso."
+  },
+  {
+   "id": "b12",
+   "file": "b12-d2072b138b.mp3",
+   "start": 6123,
+   "dur": 803,
+   "audio": 790,
+   "text": "Doce, cosas cortas. Historia de usuario: como rol, quiero algo, para un beneficio. Fases de prueba: unidad, integración, sistema y aceptación. Métodos formales: base matemática, sin ambigüedad, para sistemas críticos; no se usan en cualquier desarrollo porque son caros y no escalan. Y el estándar I E E E ochocientos treinta es la guía para especificar requerimientos, que las organizaciones adaptan."
+  },
+  {
+   "id": "b13",
+   "file": "b13-1821d69646.mp3",
+   "start": 6926,
+   "dur": 330,
+   "audio": 316,
+   "text": "Eso es todo. Ahora andá a la sección de preguntas de parciales viejos y respondelas: cada explicación trae la justificación lista para escribir. Éxitos en el parcial."
+  }
+ ]
+}

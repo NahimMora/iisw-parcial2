@@ -1,0 +1,320 @@
+{
+ "voice": "es-AR-TomasNeural",
+ "rate": "+6%",
+ "beats": [
+  {
+   "id": "b01",
+   "text": "Modo urgente. Parte uno. En este video vemos cómo es el parcial, cómo sacar la lista de requerimientos y cómo identificar y graficar los procesos de negocio. Usamos el caso que tomaron en 2023 y en 2025: el alquiler de autos en Ezeiza.",
+   "scene": {
+    "type": "title",
+    "title": "Práctico 1 · Requerimientos y procesos",
+    "sub": "Caso: alquiler de autos en Ezeiza (2023 y 2025)"
+   }
+  },
+  {
+   "id": "b02",
+   "text": "El parcial tiene dos partes. La teórica: afirmaciones verdadero o falso que hay que justificar en pocas líneas; si no justificás, no cuenta. La práctica: una narrativa de negocio. Y ojo: se aprueba con el sesenta por ciento de cada ítem, así que cada parte tiene que estar razonablemente bien.",
+   "scene": {
+    "type": "cards",
+    "heading": "Cómo es el parcial",
+    "cols": 3,
+    "items": [
+     {
+      "t": "Teórica",
+      "d": "V/F con justificación corta",
+      "at": 0.099
+     },
+     {
+      "t": "Práctica",
+      "d": "una narrativa de negocio",
+      "at": 0.481
+     },
+     {
+      "t": "60 % por ítem",
+      "d": "si un ítem falla, recuperás ese ítem",
+      "c": "#ff5d5d",
+      "at": 0.614
+     }
+    ]
+   }
+  },
+  {
+   "id": "b03",
+   "text": "Los ítems que piden casi siempre son estos cuatro. Uno, la lista de requerimientos. Dos, los procesos de negocio, y graficar uno. Tres, el diagrama de casos de uso con la descripción de un caso de uso. Y cuatro, el diagrama de secuencia de ese mismo caso de uso.",
+   "scene": {
+    "type": "flow",
+    "heading": "Los 4 ítems del práctico",
+    "items": [
+     {
+      "t": "1 · Requerimientos",
+      "d": "lista a), b), c)…",
+      "at": 0.195
+     },
+     {
+      "t": "2 · Procesos",
+      "d": "y graficar uno",
+      "at": 0.321
+     },
+     {
+      "t": "3 · Casos de uso",
+      "d": "diagrama + descripción",
+      "at": 0.496
+     },
+     {
+      "t": "4 · Secuencia",
+      "d": "del mismo caso de uso",
+      "at": 0.771
+     }
+    ]
+   }
+  },
+  {
+   "id": "b04",
+   "text": "Leamos la narrativa por párrafos. La empresa alquila vehículos y quiere controlar la disponibilidad y el cobro. El encargado recibe el pedido del cliente, verifica la disponibilidad, registra al cliente si es nuevo y genera el contrato. Cuando el auto vuelve, se registra la devolución y se emite la factura por los días, con multa si volvió tarde. Y el gerente da de alta vehículos nuevos y marca los que están en control mecánico.",
+   "scene": {
+    "type": "cards",
+    "heading": "La narrativa, por párrafos",
+    "cols": 2,
+    "items": [
+     {
+      "t": "Objetivo",
+      "d": "controlar disponibilidad y cobro de alquileres",
+      "at": 0.079
+     },
+     {
+      "t": "Alquiler",
+      "d": "pedido → disponibilidad → cliente → contrato",
+      "at": 0.259
+     },
+     {
+      "t": "Devolución",
+      "d": "registrar → factura por días (+ multa)",
+      "at": 0.549
+     },
+     {
+      "t": "Gerente",
+      "d": "alta de vehículos · baja por control mecánico",
+      "at": 0.808
+     }
+    ]
+   }
+  },
+  {
+   "id": "b05",
+   "text": "Ahora la lista. El formato que usa la cátedra es corto: un ítem por proceso del negocio, que empieza con \"el sistema debe gestionar\". La disponibilidad de los vehículos. El registro de clientes. Los alquileres, con el contrato. La devolución. La facturación y el cobro, con la multa. El ingreso de vehículos nuevos. Y la baja temporal por control mecánico. Nada de botones ni pantallas.",
+   "scene": {
+    "type": "check",
+    "heading": "Ítem 1 · Lista de requerimientos",
+    "items": [
+     {
+      "t": "a) El sistema debe gestionar la disponibilidad de los vehículos",
+      "at": 0.347
+     },
+     {
+      "t": "b) … el registro de clientes",
+      "at": 0.44
+     },
+     {
+      "t": "c) … los alquileres (pedido y contrato)",
+      "at": 0.505
+     },
+     {
+      "t": "d) … la devolución de los vehículos",
+      "at": 0.591
+     },
+     {
+      "t": "e) … la facturación y el cobro (con multa por demora)",
+      "at": 0.63
+     },
+     {
+      "t": "f) … el ingreso de nuevos vehículos",
+      "at": 0.736
+     },
+     {
+      "t": "g) … la baja temporal por control mecánico",
+      "at": 0.819
+     }
+    ]
+   }
+  },
+  {
+   "id": "b06",
+   "text": "Si te piden distinguir, recordá: el funcional dice qué hace el sistema; el no funcional es una restricción sobre cómo lo hace. Por ejemplo, que la multa salga en negrita y subrayada en la factura es no funcional.",
+   "scene": {
+    "type": "compare",
+    "heading": "Funcional vs no funcional",
+    "left": "Funcional",
+    "right": "No funcional",
+    "rows": [
+     {
+      "k": "Qué es",
+      "l": "qué hace el sistema",
+      "r": "restricción sobre cómo lo hace",
+      "at": 0.156
+     },
+     {
+      "k": "Ejemplo",
+      "l": "gestionar la facturación con multa",
+      "r": "la multa en negrita y subrayada",
+      "at": 0.34
+     }
+    ]
+   }
+  },
+  {
+   "id": "b07",
+   "text": "Ítem dos: los procesos de negocio. Un proceso es un conjunto de actividades que produce un resultado de valor. Acá hay tres: el alquiler del vehículo, la devolución con su facturación, y la gestión de la flota que hace el gerente.",
+   "scene": {
+    "type": "cards",
+    "heading": "Ítem 2 · Procesos de negocio",
+    "cols": 3,
+    "items": [
+     {
+      "t": "Alquiler",
+      "d": "pedido → disponibilidad → cliente → alquiler → contrato",
+      "at": 0.543
+     },
+     {
+      "t": "Devolución y facturación",
+      "d": "registrar → calcular días y multa → facturar",
+      "at": 0.657
+     },
+     {
+      "t": "Gestión de la flota",
+      "d": "alta de vehículos · no disponibles por control",
+      "at": 0.804
+     }
+    ]
+   }
+  },
+  {
+   "id": "b08",
+   "text": "Para graficar uno se usa el diagrama de actividad, con un carril por responsable. Arranca con el círculo negro. El cliente pide un vehículo. La empresa verifica la disponibilidad. Un rombo de decisión: si no hay vehículo, se le informa y termina. Otra decisión: si el cliente no está registrado, se registran sus datos. Se registra el alquiler y se genera el contrato. El cliente recibe el contrato y el auto, y termina con el círculo con punto.",
+   "scene": {
+    "type": "act",
+    "heading": "Diagrama de actividad · proceso de alquiler",
+    "lanes": [
+     "Cliente",
+     "Empresa (encargado + sistema)"
+    ],
+    "steps": [
+     {
+      "lane": 0,
+      "kind": "start",
+      "at": 0.184
+     },
+     {
+      "lane": 0,
+      "kind": "act",
+      "t": "Pide un vehículo",
+      "at": 0.252
+     },
+     {
+      "lane": 1,
+      "kind": "act",
+      "t": "Verifica disponibilidad",
+      "at": 0.317
+     },
+     {
+      "lane": 1,
+      "kind": "dec",
+      "t": "¿Hay vehículo?",
+      "no": "Informa → fin",
+      "at": 0.404
+     },
+     {
+      "lane": 1,
+      "kind": "dec",
+      "t": "¿Cliente registrado?",
+      "no": "Registra al cliente",
+      "at": 0.555
+     },
+     {
+      "lane": 1,
+      "kind": "act",
+      "t": "Registra alquiler y contrato",
+      "at": 0.719
+     },
+     {
+      "lane": 0,
+      "kind": "act",
+      "t": "Recibe contrato y auto",
+      "at": 0.829
+     },
+     {
+      "lane": 0,
+      "kind": "end",
+      "at": 0.921
+     }
+    ]
+   }
+  },
+  {
+   "id": "b09",
+   "text": "Los elementos que tenés que saber nombrar: estado inicial, actividad, una caja redondeada; decisión, un rombo con condiciones de guarda entre corchetes; barra de sincronización, para actividades en paralelo; estado final; y los carriles, que muestran quién hace cada cosa.",
+   "scene": {
+    "type": "cards",
+    "heading": "Elementos del diagrama de actividad",
+    "cols": 3,
+    "items": [
+     {
+      "t": "● Inicio",
+      "d": "círculo negro",
+      "at": 0.158
+     },
+     {
+      "t": "▭ Actividad",
+      "d": "caja redondeada",
+      "at": 0.217
+     },
+     {
+      "t": "◇ Decisión",
+      "d": "salidas con [guarda]",
+      "at": 0.335
+     },
+     {
+      "t": "▬ Sincronización",
+      "d": "divide o une hilos paralelos",
+      "at": 0.562
+     },
+     {
+      "t": "◉ Fin",
+      "d": "círculo con punto",
+      "at": 0.765
+     },
+     {
+      "t": "‖ Carriles",
+      "d": "quién hace cada actividad",
+      "at": 0.816
+     }
+    ]
+   }
+  },
+  {
+   "id": "b10",
+   "text": "Probemos. ¿Qué diagrama usás para graficar un proceso de negocio? Pensalo. Es el diagrama de actividad. El de secuencia lo vamos a usar para un caso de uso, no para el proceso completo.",
+   "scene": {
+    "type": "quiz",
+    "heading": "Comprobá",
+    "q": "¿Con qué diagrama graficás un proceso de negocio?",
+    "options": [
+     "Diagrama de secuencia",
+     "Diagrama de actividad",
+     "Diagrama de colaboración"
+    ],
+    "answer": 1,
+    "why": "Actividad: muestra el flujo del proceso y quién hace cada paso.",
+    "at": 0.405
+   }
+  },
+  {
+   "id": "b11",
+   "text": "Listo el ítem uno y el dos. En el próximo video armamos el diagrama de casos de uso y la descripción del caso de uso registrar pedido de alquiler.",
+   "scene": {
+    "type": "title",
+    "title": "Sigue: casos de uso y descripción",
+    "sub": "Práctico 2"
+   }
+  }
+ ]
+}

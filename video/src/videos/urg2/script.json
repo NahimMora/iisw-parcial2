@@ -1,0 +1,328 @@
+{
+ "voice": "es-AR-TomasNeural",
+ "rate": "+6%",
+ "beats": [
+  {
+   "id": "b01",
+   "text": "Parte dos: el diagrama de casos de uso y la descripción. Es el ítem que más se recupera, así que vamos con el criterio exacto de la cátedra.",
+   "scene": {
+    "type": "title",
+    "title": "Práctico 2 · Casos de uso y descripción",
+    "sub": "Caso: alquiler de autos"
+   }
+  },
+  {
+   "id": "b02",
+   "text": "Primero, los actores. La regla de la cátedra es modelar el negocio: los actores son entidades externas. El cliente es actor, porque viene de afuera y pide el alquiler. El gerente también, porque inicia sus propios procesos: dar de alta vehículos y marcar los que no están disponibles. El encargado que atiende no es actor: procesa el pedido, es parte del sistema, igual que el bibliotecario en Kameral. Y el sistema o la factura nunca son actores.",
+   "scene": {
+    "type": "tree",
+    "heading": "¿Quién es actor?",
+    "root": "Narrativa",
+    "items": [
+     {
+      "t": "Cliente ✔",
+      "d": "externo, pide el alquiler",
+      "c": "#53d88a",
+      "at": 0.233
+     },
+     {
+      "t": "Gerente ✔",
+      "d": "inicia alta y baja de vehículos",
+      "c": "#53d88a",
+      "at": 0.376
+     },
+     {
+      "t": "Encargado ✘",
+      "d": "atiende: es parte del sistema",
+      "c": "#ff5d5d",
+      "at": 0.638
+     },
+     {
+      "t": "Sistema / Factura ✘",
+      "d": "nunca son actores",
+      "c": "#ff5d5d",
+      "at": 0.902
+     }
+    ]
+   }
+  },
+  {
+   "id": "b03",
+   "text": "La profesora lo dice así: si todo empieza en el empleado, estás pensando en la computadora. Nosotros pensamos en el negocio. El actor de registrar alquiler no es el que teclea, es el cliente que quiere el auto.",
+   "scene": {
+    "type": "compare",
+    "heading": "Pensar en el negocio",
+    "left": "Pensando en la compu ✘",
+    "right": "Pensando en el negocio ✔",
+    "rows": [
+     {
+      "k": "Actor del alquiler",
+      "l": "Encargado (el que teclea)",
+      "r": "Cliente (el que quiere el auto)",
+      "at": 0.595
+     },
+     {
+      "k": "Dónde queda el encargado",
+      "l": "afuera, como actor",
+      "r": "adentro: parte del sistema"
+     }
+    ]
+   }
+  },
+  {
+   "id": "b04",
+   "text": "Ahora dibujamos. Un rectángulo que es la frontera del sistema. Adentro, los casos de uso con verbo en infinitivo y número: caso de uso uno, registrar pedido de alquiler; caso de uso dos, registrar devolución; tres, registrar nuevo vehículo; y cuatro, indicar vehículo no disponible. Afuera, el cliente, unido al alquiler y a la devolución. Y el gerente, unido al alta de vehículos y a la baja por control mecánico.",
+   "scene": {
+    "type": "uc",
+    "heading": "Ítem 3 · Diagrama de casos de uso",
+    "system": "Alquiler de vehículos (Ezeiza)",
+    "actors": [
+     {
+      "n": "Cliente",
+      "side": "l",
+      "y": 300,
+      "at": 0.703
+     },
+     {
+      "n": "Gerente",
+      "side": "r",
+      "y": 470,
+      "at": 0.821
+     }
+    ],
+    "cases": [
+     {
+      "t": "CU1: Registrar pedido de alquiler",
+      "at": 0.297
+     },
+     {
+      "t": "CU2: Registrar devolución",
+      "at": 0.411
+     },
+     {
+      "t": "CU3: Registrar nuevo vehículo",
+      "at": 0.505
+     },
+     {
+      "t": "CU4: Indicar vehículo no disponible",
+      "at": 0.582
+     }
+    ],
+    "links": [
+     {
+      "a": 0,
+      "c": 0,
+      "at": 0.746
+     },
+     {
+      "a": 0,
+      "c": 1,
+      "at": 0.775
+     },
+     {
+      "a": 1,
+      "c": 2,
+      "at": 0.87
+     },
+     {
+      "a": 1,
+      "c": 3,
+      "at": 0.92
+     }
+    ]
+   }
+  },
+  {
+   "id": "b05",
+   "text": "Chequeo rápido del diagrama. Actores afuera de la frontera, casos de uso adentro. Nombres con verbo en infinitivo y numerados. Roles, nunca nombres propios. Y el include y el extend no son obligatorios en el práctico: si dudás, no los pongas.",
+   "scene": {
+    "type": "check",
+    "heading": "Checklist del diagrama",
+    "items": [
+     {
+      "t": "Actores fuera del rectángulo, casos de uso dentro",
+      "at": 0.12
+     },
+     {
+      "t": "Verbo en infinitivo + objeto, numerados CU1, CU2…",
+      "at": 0.339
+     },
+     {
+      "t": "Roles (Cliente, Gerente), nunca nombres propios",
+      "at": 0.525
+     },
+     {
+      "t": "include / extend: no obligatorios en el práctico",
+      "at": 0.649
+     }
+    ]
+   }
+  },
+  {
+   "id": "b06",
+   "text": "Ahora la descripción del caso de uso que piden: registrar el pedido de alquiler. El encabezado tiene estos campos. Id: C U cero uno. Nombre: registrar pedido de alquiler. Actores: cliente, con P de primario, porque es quien lo inicia. Objetivo: alquilar un vehículo disponible y entregar el contrato. Precondición: el cliente se presenta en el local con sus datos. Y postcondición: el estado en que queda todo si sale bien. Alquiler registrado, vehículo no disponible y contrato generado.",
+   "scene": {
+    "type": "desc",
+    "heading": "Descripción · encabezado",
+    "rows": [
+     {
+      "k": "Id",
+      "v": "CU-01",
+      "at": 0.236
+     },
+     {
+      "k": "Nombre",
+      "v": "Registrar pedido de alquiler",
+      "at": 0.273
+     },
+     {
+      "k": "Actores",
+      "v": "Cliente (P)",
+      "at": 0.35
+     },
+     {
+      "k": "Objetivo",
+      "v": "Alquilar un vehículo disponible y entregar el contrato",
+      "at": 0.482
+     },
+     {
+      "k": "Precondición",
+      "v": "El cliente se presenta en el local con sus datos",
+      "at": 0.617
+     },
+     {
+      "k": "Postcondición",
+      "v": "Alquiler registrado, vehículo no disponible y contrato generado",
+      "at": 0.748
+     }
+    ]
+   }
+  },
+  {
+   "id": "b07",
+   "text": "El flujo normal va numerado, y las reglas de negocio van como R uno, R dos, debajo del paso que las controla. Uno: el cliente solicita alquilar un vehículo. Dos: se verifica la disponibilidad, con la regla R uno: que exista un vehículo disponible. Tres: se identifica al cliente, con la regla R dos: que esté registrado. Cuatro: se registra el alquiler y el vehículo queda no disponible. Cinco: se genera el contrato. Seis: se entrega el contrato. Y F C U, fin del caso de uso.",
+   "scene": {
+    "type": "desc",
+    "heading": "Descripción · flujo normal",
+    "rows": [
+     {
+      "k": "1",
+      "v": "Cliente solicita alquilar un vehículo (tipo y fechas)",
+      "at": 0.231
+     },
+     {
+      "k": "2",
+      "v": "Se verifica la disponibilidad de vehículos",
+      "at": 0.329
+     },
+     {
+      "k": "R1",
+      "v": "exista un vehículo disponible para esas fechas",
+      "c": "#ffd166",
+      "at": 0.405
+     },
+     {
+      "k": "3",
+      "v": "Se identifica al cliente",
+      "at": 0.52
+     },
+     {
+      "k": "R2",
+      "v": "el cliente esté registrado",
+      "c": "#ffd166",
+      "at": 0.587
+     },
+     {
+      "k": "4",
+      "v": "Se registra el alquiler; el vehículo queda no disponible",
+      "at": 0.673
+     },
+     {
+      "k": "5",
+      "v": "Se genera el contrato (datos del cliente y del vehículo)",
+      "at": 0.813
+     },
+     {
+      "k": "6",
+      "v": "Se entrega el contrato al cliente",
+      "at": 0.876
+     },
+     {
+      "k": "FCU",
+      "v": "Fin del caso de uso",
+      "c": "#53d88a",
+      "at": 0.939
+     }
+    ]
+   }
+  },
+  {
+   "id": "b08",
+   "text": "Y los flujos alternativos se numeran con el número del paso donde nacen. Si falla la regla del paso dos: dos punto uno, no hay vehículo disponible; dos punto dos, se informa y se rechaza el pedido; dos punto tres, fin del caso de uso. Si falla la regla del paso tres: tres punto uno, el cliente no está registrado; tres punto dos, se registran sus datos; tres punto tres, continúa en el paso cuatro.",
+   "scene": {
+    "type": "desc",
+    "heading": "Descripción · alternativas",
+    "rows": [
+     {
+      "k": "2.1",
+      "v": "No hay vehículo disponible",
+      "c": "#ff5d5d",
+      "at": 0.263
+     },
+     {
+      "k": "2.2",
+      "v": "Se informa al cliente y se rechaza el pedido",
+      "at": 0.371
+     },
+     {
+      "k": "2.3",
+      "v": "FCU",
+      "at": 0.496
+     },
+     {
+      "k": "3.1",
+      "v": "El cliente no está registrado",
+      "c": "#ff5d5d",
+      "at": 0.672
+     },
+     {
+      "k": "3.2",
+      "v": "Se registran los datos del cliente",
+      "at": 0.789
+     },
+     {
+      "k": "3.3",
+      "v": "Continúa en el paso 4",
+      "at": 0.89
+     }
+    ]
+   }
+  },
+  {
+   "id": "b09",
+   "text": "Pregunta típica: si el paso dos verifica la disponibilidad, ¿cómo numerás la alternativa de que no haya auto? Dos punto uno, dos punto dos, y termina en F C U o en continúa en el paso tal.",
+   "scene": {
+    "type": "quiz",
+    "heading": "Comprobá",
+    "q": "La alternativa del paso 2 se numera…",
+    "options": [
+     "A1, A2, A3",
+     "2.1, 2.2, 2.3 FCU",
+     "7, 8, 9"
+    ],
+    "answer": 1,
+    "why": "Número del paso donde nace + correlativo; termina en FCU o \"continúa en…\".",
+    "at": 0.585
+   }
+  },
+  {
+   "id": "b10",
+   "text": "Ya tenés el ítem tres. En el último video del práctico hacemos el diagrama de secuencia de este mismo caso de uso, siguiendo exactamente estos pasos.",
+   "scene": {
+    "type": "title",
+    "title": "Sigue: diagrama de secuencia",
+    "sub": "Práctico 3"
+   }
+  }
+ ]
+}

@@ -10,6 +10,7 @@ import { CUTable, Diagram } from '../components/Diagrams';
 import { Rich } from '../components/Theory';
 import { Zoomable } from '../components/Zoomable';
 import { shuffledIndices } from '../lib/grading';
+import TRANSCRIPTS from '../content/urg_transcripts.json';
 
 export interface UrgVideo { id: string; title: string; src: string; poster: string; minutes: number; summary: string }
 export const URG_VIDEOS: UrgVideo[] = [
@@ -18,7 +19,7 @@ export const URG_VIDEOS: UrgVideo[] = [
   { id: 'urg3', title: 'Práctico 3 · Diagrama de secuencia', src: 'videos/urg3-secuencia.mp4', poster: 'videos/urg3-secuencia.jpg', minutes: 4, summary: 'El diagrama de secuencia del mismo CU, paso a paso, con interfaz, control y entidades.' },
   { id: 'urg4', title: 'Teoría express · lo que siempre toman', src: 'videos/urg4-teoria.mp4', poster: 'videos/urg4-teoria.jpg', minutes: 5, summary: 'Las afirmaciones V/F que más se repiten, y cómo justificarlas en dos líneas.' },
 ];
-const READY_VIDEOS = new Set<string>([]);
+const READY_VIDEOS = new Set<string>(['urg1', 'urg2', 'urg3', 'urg4']);
 
 const STEPS = [
   { id: 'formato', t: '1. Cómo es el parcial', min: 3 },
@@ -59,6 +60,7 @@ export function Urgente() {
               ? <video controls preload="metadata" playsInline poster={`${import.meta.env.BASE_URL}${v.poster}`} src={`${import.meta.env.BASE_URL}${v.src}`} data-testid={`video-${v.id}`} />
               : <div className="urg-pending">⏳ Este video se está renderizando y aparece acá en unos minutos. Mientras tanto, avanzá con la <a href="#solucion">solución modelo</a>.</div>}
             <p className="hint">{v.summary}</p>
+            {READY_VIDEOS.has(v.id) && <details className="transcript"><summary>Leer la narración completa</summary>{(TRANSCRIPTS as Record<string, string[]>)[v.id]?.map((t, i) => <p key={i}>{t}</p>)}</details>}
           </div>
         ))}
       </section>

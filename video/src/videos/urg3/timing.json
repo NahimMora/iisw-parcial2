@@ -1,0 +1,70 @@
+{
+ "fps": 30,
+ "total": 4492,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-5c76c5ef1f.mp3",
+   "start": 18,
+   "dur": 284,
+   "audio": 270,
+   "text": "Parte tres: el diagrama de secuencia del caso de uso registrar pedido de alquiler. Tiene que seguir el mismo orden que la descripción que acabamos de escribir."
+  },
+  {
+   "id": "b02",
+   "file": "b02-f84eadb230.mp3",
+   "start": 301,
+   "dur": 734,
+   "audio": 721,
+   "text": "Usamos el actor y los tres estereotipos de análisis, y la cátedra pide los tres. El actor, el cliente. La interfaz, un círculo con una T acostada: comunica al actor con el sistema. El control, un círculo con una flecha: coordina la lógica. Y la entidad, un círculo con una raya abajo: la información que se guarda en el tiempo, como vehículos, clientes y alquileres."
+  },
+  {
+   "id": "b03",
+   "file": "b03-894d40d161.mp3",
+   "start": 1036,
+   "dur": 336,
+   "audio": 323,
+   "text": "La regla de oro de quién le habla a quién: el actor solo le habla a la interfaz, la interfaz al control y el control a las entidades. Si el actor le habla directo a una entidad, está mal."
+  },
+  {
+   "id": "b04",
+   "file": "b04-3d4bfd6915.mp3",
+   "start": 1372,
+   "dur": 1558,
+   "audio": 1544,
+   "text": "Armemos el diagrama siguiendo la descripción. Cliente, pantalla alquiler, control alquiler, y las entidades vehículos, clientes y alquileres. Paso uno de la descripción: el cliente solicita el alquiler a la pantalla, con tipo y fechas. Paso dos: la pantalla le pide al control verificar disponibilidad, y el control le pide a vehículos los disponibles. Si no hay vehículo, con la condición entre corchetes, el control le informa a la pantalla: esa es la alternativa dos punto uno. Paso tres: el control busca al cliente por su documento, y si no está registrado, lo registra: la alternativa tres punto uno. Paso cuatro: registra el alquiler y marca el vehículo como no disponible. Paso cinco: el control genera el contrato, un mensaje a sí mismo. Y paso seis: el control se lo pasa a la pantalla y la pantalla se lo entrega al cliente."
+  },
+  {
+   "id": "b05",
+   "file": "b05-9f783449a3.mp3",
+   "start": 2930,
+   "dur": 641,
+   "audio": 628,
+   "text": "Antes de entregar, chequeá esto. Es el mismo caso de uso que describiste. Sigue el mismo orden que los pasos de la descripción. Aparecen los tres estereotipos: interfaz, control y entidad. Las condiciones van entre corchetes sobre el mensaje. Y las barras de activación son opcionales: no te preocupes por ellas."
+  },
+  {
+   "id": "b06",
+   "file": "b06-883f4c611d.mp3",
+   "start": 3571,
+   "dur": 385,
+   "audio": 372,
+   "text": "Una diferencia que toman en la teoría: en el diagrama de secuencia el orden lo da el tiempo, de arriba hacia abajo. En el de colaboración los objetos se dibujan libres, y por eso es necesario numerar los mensajes."
+  },
+  {
+   "id": "b07",
+   "file": "b07-3d28155d44.mp3",
+   "start": 3956,
+   "dur": 226,
+   "audio": 212,
+   "text": "Pregunta: el cliente le manda el primer mensaje a… la interfaz. Nunca al control ni a una entidad."
+  },
+  {
+   "id": "b08",
+   "file": "b08-1a2849b639.mp3",
+   "start": 4182,
+   "dur": 265,
+   "audio": 251,
+   "text": "Con esto tenés el práctico completo. Ahora practicá en la página con las preguntas de opción múltiple y después mirá el video de teoría express."
+  }
+ ]
+}

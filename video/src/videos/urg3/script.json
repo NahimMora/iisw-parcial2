@@ -1,0 +1,273 @@
+{
+ "voice": "es-AR-TomasNeural",
+ "rate": "+6%",
+ "beats": [
+  {
+   "id": "b01",
+   "text": "Parte tres: el diagrama de secuencia del caso de uso registrar pedido de alquiler. Tiene que seguir el mismo orden que la descripción que acabamos de escribir.",
+   "scene": {
+    "type": "title",
+    "title": "Práctico 3 · Diagrama de secuencia",
+    "sub": "CU-01: Registrar pedido de alquiler"
+   }
+  },
+  {
+   "id": "b02",
+   "text": "Usamos el actor y los tres estereotipos de análisis, y la cátedra pide los tres. El actor, el cliente. La interfaz, un círculo con una T acostada: comunica al actor con el sistema. El control, un círculo con una flecha: coordina la lógica. Y la entidad, un círculo con una raya abajo: la información que se guarda en el tiempo, como vehículos, clientes y alquileres.",
+   "scene": {
+    "type": "cards",
+    "heading": "Los participantes",
+    "cols": 2,
+    "items": [
+     {
+      "t": "Actor",
+      "d": "Cliente",
+      "c": "#ff8fab",
+      "at": 0.221
+     },
+     {
+      "t": "Interfaz ⊢○",
+      "d": "Pantalla Alquiler: actor ↔ sistema",
+      "c": "#6ea8ff",
+      "at": 0.281
+     },
+     {
+      "t": "Control ↺",
+      "d": "Control Alquiler: coordina la lógica",
+      "c": "#ffb35c",
+      "at": 0.495
+     },
+     {
+      "t": "Entidad ○̲",
+      "d": "Vehículos · Clientes · Alquileres",
+      "c": "#6fd69a",
+      "at": 0.656
+     }
+    ]
+   }
+  },
+  {
+   "id": "b03",
+   "text": "La regla de oro de quién le habla a quién: el actor solo le habla a la interfaz, la interfaz al control y el control a las entidades. Si el actor le habla directo a una entidad, está mal.",
+   "scene": {
+    "type": "flow",
+    "heading": "Quién le habla a quién",
+    "items": [
+     {
+      "t": "Actor",
+      "c": "#ff8fab",
+      "at": 0.23
+     },
+     {
+      "t": "Interfaz",
+      "c": "#6ea8ff",
+      "at": 0.433
+     },
+     {
+      "t": "Control",
+      "c": "#ffb35c",
+      "at": 0.556
+     },
+     {
+      "t": "Entidades",
+      "c": "#6fd69a"
+     }
+    ],
+    "note": {
+     "t": "✘ nunca: actor → entidad",
+     "at": 0.8
+    }
+   }
+  },
+  {
+   "id": "b04",
+   "text": "Armemos el diagrama siguiendo la descripción. Cliente, pantalla alquiler, control alquiler, y las entidades vehículos, clientes y alquileres. Paso uno de la descripción: el cliente solicita el alquiler a la pantalla, con tipo y fechas. Paso dos: la pantalla le pide al control verificar disponibilidad, y el control le pide a vehículos los disponibles. Si no hay vehículo, con la condición entre corchetes, el control le informa a la pantalla: esa es la alternativa dos punto uno. Paso tres: el control busca al cliente por su documento, y si no está registrado, lo registra: la alternativa tres punto uno. Paso cuatro: registra el alquiler y marca el vehículo como no disponible. Paso cinco: el control genera el contrato, un mensaje a sí mismo. Y paso seis: el control se lo pasa a la pantalla y la pantalla se lo entrega al cliente.",
+   "scene": {
+    "type": "seq",
+    "heading": "Ítem 4 · Secuencia de CU-01",
+    "parts": [
+     {
+      "n": "Cliente",
+      "k": "actor",
+      "at": 0.055
+     },
+     {
+      "n": "Pantalla Alquiler",
+      "k": "interface",
+      "at": 0.066
+     },
+     {
+      "n": "Control Alquiler",
+      "k": "control",
+      "at": 0.089
+     },
+     {
+      "n": "Vehículos",
+      "k": "entity",
+      "at": 0.11
+     },
+     {
+      "n": "Clientes",
+      "k": "entity",
+      "at": 0.143
+     },
+     {
+      "n": "Alquileres",
+      "k": "entity",
+      "at": 0.153
+     }
+    ],
+    "msgs": [
+     {
+      "f": 0,
+      "t": 1,
+      "l": "Solicitar alquiler(tipo, fechas)",
+      "at": 0.204
+     },
+     {
+      "f": 1,
+      "t": 2,
+      "l": "Verificar disponibilidad()",
+      "at": 0.295
+     },
+     {
+      "f": 2,
+      "t": 3,
+      "l": "Dame vehículos disponibles()",
+      "at": 0.363
+     },
+     {
+      "f": 2,
+      "t": 1,
+      "l": "Informar sin disponibilidad()",
+      "c": "no hay vehículo",
+      "at": 0.423
+     },
+     {
+      "f": 2,
+      "t": 4,
+      "l": "Buscar cliente(dni)",
+      "at": 0.589
+     },
+     {
+      "f": 2,
+      "t": 4,
+      "l": "Registrar cliente(datos)",
+      "c": "no registrado",
+      "at": 0.644
+     },
+     {
+      "f": 2,
+      "t": 5,
+      "l": "Registrar alquiler()",
+      "at": 0.743
+     },
+     {
+      "f": 2,
+      "t": 3,
+      "l": "Marcar no disponible()",
+      "at": 0.768
+     },
+     {
+      "f": 2,
+      "t": 2,
+      "l": "Generar contrato()",
+      "at": 0.83
+     },
+     {
+      "f": 2,
+      "t": 1,
+      "l": "Mostrar contrato()",
+      "at": 0.91
+     },
+     {
+      "f": 1,
+      "t": 0,
+      "l": "Entregar contrato()",
+      "at": 0.95
+     }
+    ]
+   }
+  },
+  {
+   "id": "b05",
+   "text": "Antes de entregar, chequeá esto. Es el mismo caso de uso que describiste. Sigue el mismo orden que los pasos de la descripción. Aparecen los tres estereotipos: interfaz, control y entidad. Las condiciones van entre corchetes sobre el mensaje. Y las barras de activación son opcionales: no te preocupes por ellas.",
+   "scene": {
+    "type": "check",
+    "heading": "Checklist de la secuencia",
+    "items": [
+     {
+      "t": "Mismo caso de uso que la descripción",
+      "at": 0.106
+     },
+     {
+      "t": "Mismo orden que los pasos de la descripción",
+      "at": 0.237
+     },
+     {
+      "t": "Los 3 estereotipos: interfaz, control, entidad",
+      "at": 0.41
+     },
+     {
+      "t": "Condiciones entre [corchetes] sobre el mensaje",
+      "at": 0.606
+     },
+     {
+      "t": "Barras de activación: opcionales",
+      "at": 0.779
+     }
+    ]
+   }
+  },
+  {
+   "id": "b06",
+   "text": "Una diferencia que toman en la teoría: en el diagrama de secuencia el orden lo da el tiempo, de arriba hacia abajo. En el de colaboración los objetos se dibujan libres, y por eso es necesario numerar los mensajes.",
+   "scene": {
+    "type": "compare",
+    "heading": "Secuencia vs colaboración",
+    "left": "Secuencia",
+    "right": "Colaboración",
+    "rows": [
+     {
+      "k": "Orden",
+      "l": "por tiempo, de arriba hacia abajo",
+      "r": "numerando los mensajes 1, 2, 3…",
+      "at": 0.183
+     },
+     {
+      "k": "Dibujo",
+      "l": "líneas de vida verticales",
+      "r": "objetos libres unidos por enlaces",
+      "at": 0.545
+     }
+    ]
+   }
+  },
+  {
+   "id": "b07",
+   "text": "Pregunta: el cliente le manda el primer mensaje a… la interfaz. Nunca al control ni a una entidad.",
+   "scene": {
+    "type": "quiz",
+    "heading": "Comprobá",
+    "q": "El Cliente envía el primer mensaje a…",
+    "options": [
+     "Control Alquiler",
+     "Pantalla Alquiler (interfaz)",
+     "Vehículos (entidad)"
+    ],
+    "answer": 1,
+    "why": "El actor solo interactúa con la interfaz.",
+    "at": 0.52
+   }
+  },
+  {
+   "id": "b08",
+   "text": "Con esto tenés el práctico completo. Ahora practicá en la página con las preguntas de opción múltiple y después mirá el video de teoría express.",
+   "scene": {
+    "type": "title",
+    "title": "Práctico completo ✔",
+    "sub": "Ahora: preguntas de práctica y teoría express"
+   }
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "fps": 30,
+ "total": 6310,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-d27d20df08.mp3",
+   "start": 18,
+   "dur": 515,
+   "audio": 501,
+   "text": "Modo urgente. Parte uno. En este video vemos cómo es el parcial, cómo sacar la lista de requerimientos y cómo identificar y graficar los procesos de negocio. Usamos el caso que tomaron en 2023 y en 2025: el alquiler de autos en Ezeiza."
+  },
+  {
+   "id": "b02",
+   "file": "b02-b95efcafd1.mp3",
+   "start": 533,
+   "dur": 590,
+   "audio": 576,
+   "text": "El parcial tiene dos partes. La teórica: afirmaciones verdadero o falso que hay que justificar en pocas líneas; si no justificás, no cuenta. La práctica: una narrativa de negocio. Y ojo: se aprueba con el sesenta por ciento de cada ítem, así que cada parte tiene que estar razonablemente bien."
+  },
+  {
+   "id": "b03",
+   "file": "b03-d19fa89024.mp3",
+   "start": 1122,
+   "dur": 569,
+   "audio": 556,
+   "text": "Los ítems que piden casi siempre son estos cuatro. Uno, la lista de requerimientos. Dos, los procesos de negocio, y graficar uno. Tres, el diagrama de casos de uso con la descripción de un caso de uso. Y cuatro, el diagrama de secuencia de ese mismo caso de uso."
+  },
+  {
+   "id": "b04",
+   "file": "b04-b36714b670.mp3",
+   "start": 1691,
+   "dur": 783,
+   "audio": 770,
+   "text": "Leamos la narrativa por párrafos. La empresa alquila vehículos y quiere controlar la disponibilidad y el cobro. El encargado recibe el pedido del cliente, verifica la disponibilidad, registra al cliente si es nuevo y genera el contrato. Cuando el auto vuelve, se registra la devolución y se emite la factura por los días, con multa si volvió tarde. Y el gerente da de alta vehículos nuevos y marca los que están en control mecánico."
+  },
+  {
+   "id": "b05",
+   "file": "b05-e4a122281e.mp3",
+   "start": 2475,
+   "dur": 870,
+   "audio": 857,
+   "text": "Ahora la lista. El formato que usa la cátedra es corto: un ítem por proceso del negocio, que empieza con \"el sistema debe gestionar\". La disponibilidad de los vehículos. El registro de clientes. Los alquileres, con el contrato. La devolución. La facturación y el cobro, con la multa. El ingreso de vehículos nuevos. Y la baja temporal por control mecánico. Nada de botones ni pantallas."
+  },
+  {
+   "id": "b06",
+   "file": "b06-1a8136b4b5.mp3",
+   "start": 3345,
+   "dur": 403,
+   "audio": 390,
+   "text": "Si te piden distinguir, recordá: el funcional dice qué hace el sistema; el no funcional es una restricción sobre cómo lo hace. Por ejemplo, que la multa salga en negrita y subrayada en la factura es no funcional."
+  },
+  {
+   "id": "b07",
+   "file": "b07-0a684a40c7.mp3",
+   "start": 3748,
+   "dur": 441,
+   "audio": 428,
+   "text": "Ítem dos: los procesos de negocio. Un proceso es un conjunto de actividades que produce un resultado de valor. Acá hay tres: el alquiler del vehículo, la devolución con su facturación, y la gestión de la flota que hace el gerente."
+  },
+  {
+   "id": "b08",
+   "file": "b08-ba6cac8772.mp3",
+   "start": 4189,
+   "dur": 903,
+   "audio": 889,
+   "text": "Para graficar uno se usa el diagrama de actividad, con un carril por responsable. Arranca con el círculo negro. El cliente pide un vehículo. La empresa verifica la disponibilidad. Un rombo de decisión: si no hay vehículo, se le informa y termina. Otra decisión: si el cliente no está registrado, se registran sus datos. Se registra el alquiler y se genera el contrato. El cliente recibe el contrato y el auto, y termina con el círculo con punto."
+  },
+  {
+   "id": "b09",
+   "file": "b09-31c79e6a13.mp3",
+   "start": 5092,
+   "dur": 472,
+   "audio": 459,
+   "text": "Los elementos que tenés que saber nombrar: estado inicial, actividad, una caja redondeada; decisión, un rombo con condiciones de guarda entre corchetes; barra de sincronización, para actividades en paralelo; estado final; y los carriles, que muestran quién hace cada cosa."
+  },
+  {
+   "id": "b10",
+   "file": "b10-b0050db6bd.mp3",
+   "start": 5564,
+   "dur": 415,
+   "audio": 402,
+   "text": "Probemos. ¿Qué diagrama usás para graficar un proceso de negocio? Pensalo. Es el diagrama de actividad. El de secuencia lo vamos a usar para un caso de uso, no para el proceso completo."
+  },
+  {
+   "id": "b11",
+   "file": "b11-a8cdc93237.mp3",
+   "start": 5979,
+   "dur": 286,
+   "audio": 272,
+   "text": "Listo el ítem uno y el dos. En el próximo video armamos el diagrama de casos de uso y la descripción del caso de uso registrar pedido de alquiler."
+  }
+ ]
+}

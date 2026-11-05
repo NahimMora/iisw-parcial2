@@ -1,0 +1,86 @@
+{
+ "fps": 30,
+ "total": 6504,
+ "beats": [
+  {
+   "id": "b01",
+   "file": "b01-1855decb9a.mp3",
+   "start": 18,
+   "dur": 286,
+   "audio": 272,
+   "text": "Parte dos: el diagrama de casos de uso y la descripción. Es el ítem que más se recupera, así que vamos con el criterio exacto de la cátedra."
+  },
+  {
+   "id": "b02",
+   "file": "b02-b733cf0310.mp3",
+   "start": 304,
+   "dur": 853,
+   "audio": 840,
+   "text": "Primero, los actores. La regla de la cátedra es modelar el negocio: los actores son entidades externas. El cliente es actor, porque viene de afuera y pide el alquiler. El gerente también, porque inicia sus propios procesos: dar de alta vehículos y marcar los que no están disponibles. El encargado que atiende no es actor: procesa el pedido, es parte del sistema, igual que el bibliotecario en Kameral. Y el sistema o la factura nunca son actores."
+  },
+  {
+   "id": "b03",
+   "file": "b03-07c149ea93.mp3",
+   "start": 1157,
+   "dur": 415,
+   "audio": 401,
+   "text": "La profesora lo dice así: si todo empieza en el empleado, estás pensando en la computadora. Nosotros pensamos en el negocio. El actor de registrar alquiler no es el que teclea, es el cliente que quiere el auto."
+  },
+  {
+   "id": "b04",
+   "file": "b04-8b3323d803.mp3",
+   "start": 1571,
+   "dur": 835,
+   "audio": 822,
+   "text": "Ahora dibujamos. Un rectángulo que es la frontera del sistema. Adentro, los casos de uso con verbo en infinitivo y número: caso de uso uno, registrar pedido de alquiler; caso de uso dos, registrar devolución; tres, registrar nuevo vehículo; y cuatro, indicar vehículo no disponible. Afuera, el cliente, unido al alquiler y a la devolución. Y el gerente, unido al alta de vehículos y a la baja por control mecánico."
+  },
+  {
+   "id": "b05",
+   "file": "b05-56d65027ff.mp3",
+   "start": 2406,
+   "dur": 542,
+   "audio": 528,
+   "text": "Chequeo rápido del diagrama. Actores afuera de la frontera, casos de uso adentro. Nombres con verbo en infinitivo y numerados. Roles, nunca nombres propios. Y el include y el extend no son obligatorios en el práctico: si dudás, no los pongas."
+  },
+  {
+   "id": "b06",
+   "file": "b06-87884f54ab.mp3",
+   "start": 2948,
+   "dur": 1029,
+   "audio": 1015,
+   "text": "Ahora la descripción del caso de uso que piden: registrar el pedido de alquiler. El encabezado tiene estos campos. Id: C U cero uno. Nombre: registrar pedido de alquiler. Actores: cliente, con P de primario, porque es quien lo inicia. Objetivo: alquilar un vehículo disponible y entregar el contrato. Precondición: el cliente se presenta en el local con sus datos. Y postcondición: el estado en que queda todo si sale bien. Alquiler registrado, vehículo no disponible y contrato generado."
+  },
+  {
+   "id": "b07",
+   "file": "b07-7db11acd04.mp3",
+   "start": 3977,
+   "dur": 1046,
+   "audio": 1032,
+   "text": "El flujo normal va numerado, y las reglas de negocio van como R uno, R dos, debajo del paso que las controla. Uno: el cliente solicita alquilar un vehículo. Dos: se verifica la disponibilidad, con la regla R uno: que exista un vehículo disponible. Tres: se identifica al cliente, con la regla R dos: que esté registrado. Cuatro: se registra el alquiler y el vehículo queda no disponible. Cinco: se genera el contrato. Seis: se entrega el contrato. Y F C U, fin del caso de uso."
+  },
+  {
+   "id": "b08",
+   "file": "b08-c079c70159.mp3",
+   "start": 5023,
+   "dur": 762,
+   "audio": 748,
+   "text": "Y los flujos alternativos se numeran con el número del paso donde nacen. Si falla la regla del paso dos: dos punto uno, no hay vehículo disponible; dos punto dos, se informa y se rechaza el pedido; dos punto tres, fin del caso de uso. Si falla la regla del paso tres: tres punto uno, el cliente no está registrado; tres punto dos, se registran sus datos; tres punto tres, continúa en el paso cuatro."
+  },
+  {
+   "id": "b09",
+   "file": "b09-625e1f60a3.mp3",
+   "start": 5784,
+   "dur": 376,
+   "audio": 362,
+   "text": "Pregunta típica: si el paso dos verifica la disponibilidad, ¿cómo numerás la alternativa de que no haya auto? Dos punto uno, dos punto dos, y termina en F C U o en continúa en el paso tal."
+  },
+  {
+   "id": "b10",
+   "file": "b10-49ea7c802b.mp3",
+   "start": 6160,
+   "dur": 299,
+   "audio": 286,
+   "text": "Ya tenés el ítem tres. En el último video del práctico hacemos el diagrama de secuencia de este mismo caso de uso, siguiendo exactamente estos pasos."
+  }
+ ]
+}
