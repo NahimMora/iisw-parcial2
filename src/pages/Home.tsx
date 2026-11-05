@@ -26,6 +26,7 @@ export function Home() {
 
   return (
     <div className="page home">
+      <Link to="/urgente" className="home-urg" data-testid="home-urgente"><p><b>🚨 ¿Te quedan pocas horas?</b> Modo urgente: el práctico resuelto (alquiler de autos, el caso de 2023 y 2025) y teoría de parciales viejos en opción múltiple.</p><span className="btn">Entrar al modo urgente →</span></Link>
       <section className="hero">
         <div>
           <p className="eyebrow">Introducción a la Ingeniería de Software · UP</p>

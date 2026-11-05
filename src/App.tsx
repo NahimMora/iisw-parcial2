@@ -8,6 +8,7 @@ import { ProgressPage } from './pages/ProgressPage';
 import { FEATURES } from './content/features';
 import { Trainer } from './pages/Trainer';
 import { Exams } from './pages/Exams';
+import { Urgente } from './pages/Urgente';
 
 export function App() {
   return (
@@ -15,6 +16,7 @@ export function App() {
       <header className="topbar">
         <Link to="/" className="brand"><span className="logo">◇</span> IISW · 2º parcial</Link>
         <nav className="mainnav" aria-label="Navegación principal">
+          <NavLink to="/urgente" className="nav-urg"><i className="nav-ico">🚨</i>Urgente</NavLink>
           <NavLink to="/" end><i className="nav-ico">⌂</i>Panel</NavLink>
           <NavLink to="/repaso"><i className="nav-ico">↻</i>Repaso</NavLink>
           {FEATURES.trainer && <NavLink to="/entrenador"><i className="nav-ico">◆</i>Entrenar</NavLink>}
@@ -26,6 +28,7 @@ export function App() {
         <Guarded>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/urgente" element={<Urgente />} />
           <Route path="/capitulo/:id" element={<ChapterPage />} />
           <Route path="/capitulo/:id/:section" element={<ChapterPage />} />
           <Route path="/repaso" element={<Review />} />
